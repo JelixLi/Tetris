@@ -79,9 +79,9 @@ $ ls /dev/shm/serving_memorys/
 1604344674  2000790521  3100178750  3734658635  547595457
 ```
 # Agent Evaluation
-We have provided scripts for measuring agent memory consumption and model loading time.
+We have provided [scripts](https://github.com/JelixLi/Tetris/tree/main/scripts) for measuring agent memory consumption and model loading time.
 
-static_memory.py measure multiple instance total mmeory consumption, here only the static memory (no requests have been processed) is measured for simplicity and quick evaluation.
+static_memory.py measures multiple instance total mmeory consumption, here only the static memory (no requests have been processed) is measured for simplicity and quick evaluation.
 
 For example, the following instruction measures 2 vgg16 instances' total static memory consumption with original tensorflow/serving, which should be replaced by registry.cn-hangzhou.aliyuncs.com/gcr_cn/serving_run:2.4.1-ws to run Tetris' agent.
 ```
