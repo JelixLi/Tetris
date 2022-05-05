@@ -111,8 +111,28 @@ $ sudo docker logs c4e527f25017d9b47630cb9b072a5349ae9ee8797f5f99511c690ac4c50de
 Took 96265 microseconds
 ```
 # Overall Evaluation
-Tetris is built upon a customized version of Openfaas tailored specifically for inference.
+Tetris is built upon a customized version of Openfaas tailored specifically for inference. And as it's hard to run a compelete 8-node cluster experiment, we provided a simple guide below to run a quick single-node evalution.
 
 ## Build faas-cli
 faas-cli is a command tool for deploying functions. And the instructions for building faas-cli is available [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/faas-cli#readme). And for simplicity, we also provided an already compiled version 
 [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/faas-cli#readme).
+
+## Get Gateway
+gateway component is responsible for receiving and forward requests and accepting instructions from faas-cli. Tetris's gateway is an optimized version of the original version of openfaas. And for simplicity, we also provided an already compiled image.
+```
+$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/gcr_cn/gateway:latest-dev
+
+latest-dev: Pulling from gcr_cn/gateway
+540db60ca938: Already exists 
+4e83572ec7d7: Pull complete 
+4f4fb700ef54: Pull complete 
+440b2fce8e46: Pull complete 
+3f1f27bce376: Pull complete 
+722364792005: Pull complete 
+5a470c7002ba: Pull complete 
+Digest: sha256:ae07855b56eb2948702199e47dd2d5a39b77489ad9fba1e5563133fe7b9b5447
+Status: Downloaded newer image for registry.cn-hangzhou.aliyuncs.com/gcr_cn/gateway:latest-dev
+registry.cn-hangzhou.aliyuncs.com/gcr_cn/gateway:latest-dev
+
+$ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/gateway:latest-dev openfaas/gateway:latest-dev
+```
