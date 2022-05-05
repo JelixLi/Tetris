@@ -1,0 +1,1 @@
+docker build --no-cache -t serving_build:2.4.1 .

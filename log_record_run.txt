@@ -1,0 +1,53 @@
+
+resnet-50:
+
+CONTAINER ID   NAME        CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O    PIDS
+e0a1f4842e76   resnet-50   0.04%     132.4MiB / 125.6GiB   0.10%     2.37kB / 0B   103MB / 0B   105
+
+2021-04-02 11:55:36.310259: I tensorflow_serving/model_servers/server.cc:88] Building single TensorFlow model file config:  model_name: resnet-50 model_base_path: /models/resnet-50
+2021-04-02 11:55:36.310469: I tensorflow_serving/model_servers/server_core.cc:464] Adding/updating models.
+2021-04-02 11:55:36.310483: I tensorflow_serving/model_servers/server_core.cc:587]  (Re-)adding model: resnet-50
+2021-04-02 11:55:36.410988: I tensorflow_serving/core/basic_manager.cc:740] Successfully reserved resources to load servable {name: resnet-50 version: 1}
+2021-04-02 11:55:36.411039: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: resnet-50 version: 1}
+2021-04-02 11:55:36.411058: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: resnet-50 version: 1}
+2021-04-02 11:55:36.411120: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:32] Reading SavedModel from: /models/resnet-50/1
+2021-04-02 11:55:36.797528: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:55] Reading meta graph with tags { serve }
+2021-04-02 11:55:36.797605: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:93] Reading SavedModel debug info (if present) from: /models/resnet-50/1
+2021-04-02 11:55:36.797769: I external/org_tensorflow/tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-04-02 11:55:36.838215: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:190] Running initialization op on SavedModel bundle at path: /models/resnet-50/1
+2021-04-02 11:55:36.841026: I external/org_tensorflow/tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2500000000 Hz
+2021-04-02 11:55:36.845795: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:277] SavedModel load for tags { serve }; Status: success: OK. Took 434676 microseconds.
+2021-04-02 11:55:36.846907: I tensorflow_serving/servables/tensorflow/saved_model_warmup_util.cc:59] No warmup data file found at /models/resnet-50/1/assets.extra/tf_serving_warmup_requests
+2021-04-02 11:55:36.847421: I tensorflow_serving/core/loader_harness.cc:87] Successfully loaded servable version {name: resnet-50 version: 1}
+2021-04-02 11:55:36.854996: I tensorflow_serving/model_servers/server.cc:371] Running gRPC ModelServer at 0.0.0.0:8500 ...
+[warn] getaddrinfo: address family for nodename not supported
+2021-04-02 11:55:36.859649: I tensorflow_serving/model_servers/server.cc:391] Exporting HTTP/REST API at:localhost:8501 ...
+[evhttp_server.cc : 238] NET_LOG: Entering the event loop ...
+
+
+
+
+
+resnet-50-1(tensorflow-serving 1.12.0):
+
+2021-04-12 11:05:42.037850: I tensorflow_serving/model_servers/server.cc:82] Building single TensorFlow model file config:  model_name: resnet-50-1 model_base_path: /models/resnet-50-1
+2021-04-12 11:05:42.038081: I tensorflow_serving/model_servers/server_core.cc:461] Adding/updating models.
+2021-04-12 11:05:42.038100: I tensorflow_serving/model_servers/server_core.cc:558]  (Re-)adding model: resnet-50-1
+2021-04-12 11:05:42.138672: I tensorflow_serving/core/basic_manager.cc:739] Successfully reserved resources to load servable {name: resnet-50-1 version: 1}
+2021-04-12 11:05:42.138729: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: resnet-50-1 version: 1}
+2021-04-12 11:05:42.138759: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: resnet-50-1 version: 1}
+2021-04-12 11:05:42.138805: I external/org_tensorflow/tensorflow/contrib/session_bundle/bundle_shim.cc:363] Attempting to load native SavedModelBundle in bundle-shim from: /models/resnet-50-1/1
+2021-04-12 11:05:42.138833: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:31] Reading SavedModel from: /models/resnet-50-1/1
+2021-04-12 11:05:42.223955: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:54] Reading meta graph with tags { serve }
+2021-04-12 11:05:42.228365: I external/org_tensorflow/tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-04-12 11:05:42.245323: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:162] Restoring SavedModel bundle.
+2021-04-12 11:05:42.245394: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:172] The specified SavedModel has no variables; no checkpoints were restored. File does not exist: /models/resnet-50-1/1/variables/variables.index
+2021-04-12 11:05:42.245404: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:138] Running MainOp with key saved_model_main_op on SavedModel bundle.
+2021-04-12 11:05:42.252184: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:259] SavedModel load for tags { serve }; Status: success. Took 113342 microseconds.
+2021-04-12 11:05:42.252229: I tensorflow_serving/servables/tensorflow/saved_model_warmup.cc:83] No warmup data file found at /models/resnet-50-1/1/assets.extra/tf_serving_warmup_requests
+2021-04-12 11:05:42.252314: I tensorflow_serving/core/loader_harness.cc:86] Successfully loaded servable version {name: resnet-50-1 version: 1}
+2021-04-12 11:05:42.261074: I tensorflow_serving/model_servers/server.cc:286] Running gRPC ModelServer at 0.0.0.0:8500 ...
+[warn] getaddrinfo: address family for nodename not supported
+[evhttp_server.cc : 237] RAW: Entering the event loop ...
+2021-04-12 11:05:42.265777: I tensorflow_serving/model_servers/server.cc:302] Exporting HTTP/REST API at:localhost:8501 ...
