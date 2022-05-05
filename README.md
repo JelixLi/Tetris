@@ -84,7 +84,7 @@ We have provided scripts for measuring agent memory consumption and model loadin
 static_memory.py measure multiple instance total mmeory consumption, here only the static memory (no requests have been processed) is measured for simplicity and quick evaluation.
 
 For example, the following instruction measures 2 vgg16 instances' total static memory consumption with original tensorflow/serving, which should be replaced by registry.cn-hangzhou.aliyuncs.com/gcr_cn/serving_run:2.4.1-ws to run Tetris' agent.
-
+```
 $ sudo python static_memory.py $(pwd) vgg16 tensorflow/serving:2.4.1 2
 
 CONSTRUCTING DOCKER CONTAINER.....
@@ -103,3 +103,4 @@ model name: vgg16
 instance num: 2
 image: tensorflow/serving:2.4.1
 total mems: 1152.7
+```
