@@ -111,7 +111,7 @@ $ sudo docker logs c4e527f25017d9b47630cb9b072a5349ae9ee8797f5f99511c690ac4c50de
 Took 96265 microseconds
 ```
 # Overall Evaluation
-Tetris is built upon a customized version of Openfaas tailored specifically for inference. And as it's hard to run a compelete 8-node cluster experiment, we provided a simple guide below to run a quick single-node evalution.
+Tetris is built upon a customized version of Openfaas tailored specifically for inference. And as it's hard to run a compelete 8-node cluster experiment, we provided a simple guide below to run a quick single-node evaluation.
 
 ## Build faas-cli
 faas-cli is a command tool for deploying functions. And the instructions for building faas-cli is available [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/faas-cli#readme). And for simplicity, we also provided an already compiled version 
