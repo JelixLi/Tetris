@@ -104,7 +104,7 @@ instance num: 2
 image: tensorflow/serving:2.4.1
 total mems: 1152.7
 ```
-time_measure.py measures the instance model loading time, with examples showing below.
+time_measure.py measures the instance model loading time, with examples showing below. Where Tetris' Agent could benefit from previous started instances.
 ```
 $ sudo docker logs c4e527f25017d9b47630cb9b072a5349ae9ee8797f5f99511c690ac4c50de65a | python time_measure.py 
 
