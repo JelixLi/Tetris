@@ -1,0 +1,67 @@
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: openfaasdev
+    component: prometheusdev
+  name: prometheusdev
+  namespace: "openfaasdev"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheusdev
+  template:
+    metadata:
+      labels:
+        app: prometheusdev
+      annotations:
+        sidecar.istio.io/inject: "true"
+        checksum/prometheus-config: "5f85c869a5fc3977ddcfbfb0461070c08d48af2510eb4da93e8fb55209d57461"
+    spec:
+      serviceAccountName: clusterdev-prometheus
+      containers:
+      - name: prometheusdev
+        resources:
+            requests:
+              memory: 16384Mi
+            
+        image: prom/prometheus:v2.11.0
+        command:
+          - "prometheus"
+          - "--config.file=/etc/prometheus/prometheus.yml"
+          - "--web.listen-address=:9190"
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /-/healthy
+            port: 9190
+          timeoutSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /-/healthy
+            port: 9190
+          timeoutSeconds: 30
+        ports:
+        - containerPort: 9190
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /etc/prometheus/prometheus.yml
+          name: prometheusdev-config
+          subPath: prometheus.yml
+        - mountPath: /prometheus/data
+          name: prom-data
+      volumes:
+        - name: prometheusdev-config
+          configMap:
+            name: prometheusdev-config
+            items:
+              - key: prometheus.yml
+                path: prometheus.yml
+                mode: 0644
+        - name: prom-data
+          emptyDir: {}
+      nodeSelector:
+        kubernetes.io/hostname: kube-master
