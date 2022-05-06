@@ -117,7 +117,7 @@ Tetris is built upon a customized version of Openfaas tailored specifically for 
 faas-cli is a command tool for deploying functions. And the instructions for building faas-cli is available [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/faas-cli#readme). And for simplicity, we also provided an already compiled version 
 [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/faas-cli#readme).
 
-## Get Gateway
+## Get gateway
 gateway component is responsible for receiving and forward requests and accepting instructions from faas-cli. Tetris's gateway is an optimized version of the original version of openfaas. And for simplicity, we also provided an already compiled image.
 ```
 $ sudo docker pull registry.cn-hangzhou.aliyuncs.com/gcr_cn/gateway:latest-dev
