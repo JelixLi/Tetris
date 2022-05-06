@@ -136,7 +136,7 @@ registry.cn-hangzhou.aliyuncs.com/gcr_cn/gateway:latest-dev
 
 $ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/gateway:latest-dev openfaas/gateway:latest-dev
 ```
-# Get faas-netes
+## Get faas-netes
 faas-netes component is responsible for autoscaling, scheduling and request load balancing. We also provided an already compiled image for quick usage.
 ```
 $ sudo docker pull  registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp
