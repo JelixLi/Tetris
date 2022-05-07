@@ -675,7 +675,6 @@ Status OpKernelContext::allocate_output(int index, const TensorShape& shape,
   return allocate_output(index, shape, tensor, attr);
 }
 
-// lijie
 Status OpKernelContext::allocate_output_mmap(int index, const TensorShape& shape,
                                         Tensor** tensor,std::string mmap_id,bool& mem_not_exist) {
   if (index < 0) {
@@ -731,8 +730,7 @@ Status OpKernelContext::allocate_output(StringPiece name,
 Status OpKernelContext::allocate_tensor(
     DataType type, const TensorShape& shape, Tensor* out_tensor,
     AllocatorAttributes attr, const AllocationAttributes& allocation_attr) {
-  // lijie
-  // LOG(INFO)<<"lijie1 "<<" allocator tensor";
+
   Allocator* a = get_allocator(attr);
   // LOG(INFO)<<a->Name();
   Tensor new_tensor(
@@ -799,26 +797,22 @@ Status OpKernelContext::allocate_output(int index, const TensorShape& shape,
   return s;
 }
 
-// lijie
 Status OpKernelContext::allocate_tensor_mmap(
     DataType type, const TensorShape& shape, Tensor* out_tensor,
     AllocatorAttributes attr, const AllocationAttributes& allocation_attr,std::string mmap_id,bool& mem_not_exist) {
   // Allocator* a = get_allocator(attr);
-  // lijie
+
   Allocator* a = cpu_allocator_base_mmap(mmap_id);
   // Allocator* a = cpu_allocator_base();
 
   // CHECK(a->Name()=="cpu_mmap");
 
-  // LOG(INFO)<<"lijie "<<" allocator name: "<<a->Name();
-  // LOG(INFO)<<"lijie "<<" allocator address: "<<a;
   Tensor new_tensor(
       a, type, shape,
       AllocationAttributes(
           /*retry_on_failure=*/allocation_attr.retry_on_failure,
           /*allocation_will_be_logged=*/true, allocation_attr.freed_by_func));
-  // lijie
-  // LOG(INFO)<<"lijie "<<" allocated tensor address: "<<new_tensor.data();
+
   if (!new_tensor.IsInitialized()) {
     return errors::ResourceExhausted(
         "OOM when allocating tensor with shape", shape.DebugString(),
@@ -831,15 +825,12 @@ Status OpKernelContext::allocate_tensor_mmap(
   }
   *out_tensor = std::move(new_tensor);
 
-  // lijie
   mem_not_exist = a->MemNotExist();
 
-  // // lijie
-  // LOG(INFO)<<"lijie "<<" allocator deleted";
   return Status::OK();
 }
 
-// lijie
+
 Status OpKernelContext::allocate_output_mmap(int index, const TensorShape& shape,
                                         Tensor** output,
                                         AllocatorAttributes attr,std::string mmap_id,bool& mem_not_exist) {

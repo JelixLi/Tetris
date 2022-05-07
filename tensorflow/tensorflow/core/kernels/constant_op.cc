@@ -75,10 +75,7 @@ ConstantOp::ConstantOp(OpKernelConstruction* ctx)
   const TensorProto* proto = nullptr;
   ScopedMemoryDebugAnnotation op_annotation(name_view().data());
   OP_REQUIRES_OK(ctx, ctx->GetAttr("value", &proto));
-  // lijie
-  // LOG(INFO)<<"lijie "<<" in constant op device: "<<ctx->device()->name();
-  // LOG(INFO)<<"lijie "<<" in constant op device: "<<proto->dtype();
-  // LOG(INFO)<<"lijie "<<" in constant op device: "<<proto->tensor_shape().dim().size();
+
   OP_REQUIRES_OK(ctx, ctx->device()->MakeTensorFromProto(
                           *proto, AllocatorAttributes(), &tensor_));
   OP_REQUIRES(
@@ -136,8 +133,7 @@ template <typename Device, typename T, typename Index>
 class FillOp : public OpKernel {
  public:
   explicit FillOp(OpKernelConstruction* context) : OpKernel(context) {
-    // lijie
-    // LOG(INFO)<<"lijie "<<" in fill op device: "<<context->device()->name();
+
   }
 
   void Compute(OpKernelContext* context) override {
@@ -232,8 +228,7 @@ template <typename Device, typename T>
 class ZerosLikeOp : public OpKernel {
  public:
   explicit ZerosLikeOp(OpKernelConstruction* ctx) : OpKernel(ctx) {
-    // lijie
-    // LOG(INFO)<<"lijie "<<" in zeroslike op device: "<<ctx->device()->name();
+
   }
 
   void Compute(OpKernelContext* ctx) override {
@@ -298,8 +293,7 @@ template <typename Device, typename T>
 class OnesLikeOp : public OpKernel {
  public:
   explicit OnesLikeOp(OpKernelConstruction* ctx) : OpKernel(ctx) {
-    // lijie
-    // LOG(INFO)<<"lijie "<<" in oneslike op device: "<<ctx->device()->name();
+
   }
 
   void Compute(OpKernelContext* ctx) override {

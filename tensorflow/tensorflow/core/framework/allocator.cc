@@ -78,7 +78,7 @@ Allocator* cpu_allocator_base() {
   return cpu_alloc;
 }
 
-// lijie mmap
+
 Allocator* cpu_allocator_base_mmap(std::string mmap_id) {
   return AllocatorFactoryRegistry::singleton()->GetMmapAllocator(mmap_id);
 }
@@ -97,7 +97,7 @@ Allocator* cpu_allocator(int numa_node) {
     return cpu_allocator_base();
   }
 
-  // lijie
+  
   // return cpu_allocator_base();
 }
 

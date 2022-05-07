@@ -29,8 +29,7 @@ _HostConstantOp::_HostConstantOp(OpKernelConstruction* ctx)
   const TensorProto* proto = nullptr;
   AllocatorAttributes alloc_attr;
   alloc_attr.set_on_host(true);
-  // lijie
-//   LOG(INFO)<<"lijie "<<" in host constant op device: "<<ctx->device()->name();
+
   OP_REQUIRES_OK(ctx, ctx->GetAttr("value", &proto));
   OP_REQUIRES_OK(
       ctx, ctx->device()->MakeTensorFromProto(*proto, alloc_attr, &tensor_));

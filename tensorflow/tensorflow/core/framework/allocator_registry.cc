@@ -87,7 +87,7 @@ Allocator* AllocatorFactoryRegistry::GetAllocator() {
   }
 }
 
-// lijie 
+ 
 Allocator* AllocatorFactoryRegistry::GetMmapAllocator(std::string mmap_id) {
   mutex_lock l(mu_);
   first_alloc_made_ = true;

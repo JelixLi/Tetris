@@ -429,8 +429,7 @@ Status DirectSession::ExtendLocked(GraphDef graph) {
     return errors::FailedPrecondition("Session has been finalized.");
   }
   if (!(flib_def_ && execution_state_)) {
-    // lijie
-    // LOG(INFO) << "lijie-session-1";
+    
     // If this is the first call, we can initialize the execution state
     // with `graph` and do not need to call `Extend()`.
     // NOTE(mrry): The function library created here will be used for
@@ -445,8 +444,7 @@ Status DirectSession::ExtendLocked(GraphDef graph) {
         std::move(graph), options, &execution_state_));
     graph_created_ = true;
   } else {
-    // lijie
-    // LOG(INFO) << "lijie-session-2";
+    
     TF_RETURN_IF_ERROR(flib_def_->AddLibrary(graph.library()));
     std::unique_ptr<GraphExecutionState> state;
     // TODO(mrry): Rewrite GraphExecutionState::Extend() to take `graph` by

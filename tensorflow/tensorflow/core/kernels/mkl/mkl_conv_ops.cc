@@ -738,7 +738,6 @@ class MklConvOp : public OpKernel {
       }
 
       Tfilter* filter_data = nullptr;
-      // lijie
       // LOG(INFO)<<"debug";
       if (IS_FILTER_REORDER_NEEDED(filter_md, conv_fwd_pd, conv_fwd)) {
         bool is_filter_cached = false;
@@ -747,12 +746,11 @@ class MklConvOp : public OpKernel {
         // converted for the first time. This cached filter can then be reused
         // in subsequent iterations.
 
-        // lijie 
         is_filter_const_ = true;
         if (is_filter_const_) {
           if (IsFilterCacheEmpty(context)) {
             // Cache filter if it is not already cached.
-            // lijie
+
             // LOG(INFO)<<"cache filter";
             CacheFilter(context, conv_fwd_pd, filter_data, filter_tensor,
 #ifdef ENABLE_MKLDNN_V1
@@ -1066,7 +1064,7 @@ class MklConvOp : public OpKernel {
     TensorShape filter_tf_shape;
     filter_tf_shape.AddDim(
         (conv_prim_desc.PRIMITIVE_DESC_WEIGHTS.get_size() / sizeof(Tfilter)));
-    // lijie
+
     LOG(INFO)<<conv_prim_desc.PRIMITIVE_DESC_WEIGHTS.get_size();
     OP_REQUIRES_OK(context, context->allocate_persistent(
                                 DataTypeToEnum<Tfilter>::value, filter_tf_shape,

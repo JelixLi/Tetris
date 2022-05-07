@@ -996,7 +996,6 @@ class OpKernelContext {
                          Tensor** tensor,
                          AllocatorAttributes attr) TF_MUST_USE_RESULT;
 
-  // lijie
   Status allocate_output_mmap(int index, const TensorShape& shape,
                               Tensor** tensor,std::string mmap_id,bool& mem_not_exist) TF_MUST_USE_RESULT;
   Status allocate_output_mmap(int index, const TensorShape& shape, Tensor** tensor,
@@ -1279,7 +1278,6 @@ class OpKernelContext {
                            AllocationAttributes());
   }
 
-  // lijie
   Status allocate_tensor_mmap(DataType type, const TensorShape& shape,
                          Tensor* out_tensor,
                          AllocatorAttributes allocator_attr,std::string mmap_id,bool& mem_not_exist) {
@@ -1291,7 +1289,6 @@ class OpKernelContext {
                          Tensor* out_tensor, AllocatorAttributes allocator_attr,
                          const AllocationAttributes& allocation_attr);
   
-  // lijie
   Status allocate_tensor_mmap(DataType type, const TensorShape& shape,
                               Tensor* out_tensor, AllocatorAttributes allocator_attr,
                               const AllocationAttributes& allocation_attr,std::string mmap_id,bool& mem_not_exist);
