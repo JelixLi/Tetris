@@ -287,7 +287,7 @@ class Allocator {
 
   virtual void SetSafeFrontier(uint64 count) {}
 
-  // lijie
+  
   virtual bool MemNotExist() { return false; }
 };
 
@@ -406,7 +406,7 @@ struct AllocatorAttributes {
 // of the infrastructure.
 Allocator* cpu_allocator_base();
 
-// lijie mmap
+
 Allocator* cpu_allocator_base_mmap(std::string mmap_id);
 
 // If available, calls ProcessState::GetCPUAllocator(numa_node).

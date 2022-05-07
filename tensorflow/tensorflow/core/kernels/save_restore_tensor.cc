@@ -160,9 +160,6 @@ void RestoreTensor(OpKernelContext* context,
   const Tensor& tensor_name_t = context->input(1);
   const string& tensor_name = tensor_name_t.flat<tstring>()(restore_index);
 
-  //lijie
-  LOG(INFO)<<"lijie "<<"restoring tensor v1: "<<" tensor_name: "<< tensor_name;
-
   // If we cannot find a cached reader we will allocate our own.
   std::unique_ptr<checkpoint::TensorSliceReader> allocated_reader;
 
@@ -272,7 +269,7 @@ struct RestoreOp {
   }
 
   Status GetMmapID(BundleReader* reader,std::string *mmap_id) {
-    //lijie
+
     CHECK(mmap_id != nullptr);
     uint32 unmasked_crc_value = 0;
     TF_RETURN_IF_ERROR(reader->GetUnmaskedCRC(tensor_name,&unmasked_crc_value));  
@@ -288,20 +285,16 @@ struct RestoreOp {
             << restored_full_shape.num_elements();
     Tensor* restored_tensor;
     if (shape_and_slice.empty()) {
-      // // lijie
       std::string mmap_id;
       TF_RETURN_IF_ERROR(GetMmapID(reader,&mmap_id));
-      // LOG(INFO)<<"lijie "<<" tensor_name: "<<tensor_name<<" mmap_id: "<<mmap_id;
 
-      // lijie
       // bool mem_not_exist = false;
       bool mem_not_exist = true;
 
-      // lijie
       // Lookup the full tensor.
       TF_RETURN_IF_ERROR(
           context->allocate_output_mmap(idx, restored_full_shape, &restored_tensor,mmap_id,mem_not_exist));
-      // LOG(INFO)<<"lijie "<<" mem_not_exist: "<<mem_not_exist;
+
       if(mem_not_exist) {
         TF_RETURN_IF_ERROR(reader->Lookup(tensor_name, restored_tensor));
       }
@@ -310,8 +303,6 @@ struct RestoreOp {
       //     context->allocate_output(idx, restored_full_shape, &restored_tensor));
       // TF_RETURN_IF_ERROR(reader->Lookup(tensor_name, restored_tensor));
     } else {
-      // lijie
-      LOG(INFO)<<"lijie "<<"run restore slice "<<" tensor_name: "<<tensor_name;
 
       // Lookup the slice.
       TensorShape parsed_full_shape;
@@ -385,10 +376,8 @@ Status RestoreTensorsV2(OpKernelContext* context, const Tensor& prefix,
   //             return tensor_names_flat(a) < tensor_names_flat(b);
   //           });
 
-  // lijie
   std::srand ( unsigned ( std::time(0) ) );
 
-  // lijie
   std::random_shuffle ( sorted_name_idx.begin(), sorted_name_idx.end(), myrandom);
 
   std::vector<std::unique_ptr<RestoreOp> > pool_restore_ops;
@@ -402,9 +391,6 @@ Status RestoreTensorsV2(OpKernelContext* context, const Tensor& prefix,
     TensorShape restored_full_shape;
     DataType original_dtype;
     const string& tensor_name = tensor_names_flat(i);
-
-    //lijie
-    // LOG(INFO)<<"lijie "<<"restoring tensor v2: "<<" tensor_name: "<<tensor_name;
 
     TF_RETURN_IF_ERROR(default_reader.LookupDtypeAndShape(
         tensor_name, &original_dtype, &restored_full_shape));
@@ -465,9 +451,6 @@ Status RestoreTensorsV2(OpKernelContext* context, const Tensor& prefix,
           DataTypeString(context->mutable_output(i)->dtype()));
     }
   }
-
-  // lijie
-  // LOG(INFO)<<"lijie "<<"Done restored tensor ";
 
   return Status::OK();
 }

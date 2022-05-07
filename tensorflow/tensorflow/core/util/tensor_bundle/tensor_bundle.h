@@ -263,7 +263,6 @@ class BundleReader {
 
   string DebugString();
 
-  //lijie
   Status GetUnmaskedCRC(StringPiece key,uint32 *unmasked_crc_value);
 
  private:

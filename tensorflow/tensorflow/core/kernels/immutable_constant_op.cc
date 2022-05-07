@@ -83,8 +83,7 @@ class MemmappedTensorAllocator : public Allocator {
 
 ImmutableConstantOp::ImmutableConstantOp(OpKernelConstruction* context)
     : OpKernel(context) {
-  // lijie
-  // LOG(INFO)<<"lijie "<<" in immutable constant op device: "<<context->device()->name();
+
   OP_REQUIRES_OK(context,
                  context->GetAttr(kMemoryRegionNameAttr, &region_name_));
   OP_REQUIRES_OK(context, context->GetAttr(kDTypeAttr, &dtype_));

@@ -84,8 +84,7 @@ class CPUAllocator : public Allocator {
   string Name() override { return "cpu"; }
 
   void* AllocateRaw(size_t alignment, size_t num_bytes) override {
-    // lijie
-    // LOG(INFO)<<"lijie2 "<<" cpu allocate bytes "<<num_bytes;
+    
     if (num_bytes > static_cast<size_t>(LargeAllocationWarningBytes()) &&
         single_allocation_warning_count_ < kMaxSingleAllocationWarnings) {
       ++single_allocation_warning_count_;
@@ -123,8 +122,7 @@ class CPUAllocator : public Allocator {
       mutex_lock l(mu_);
       stats_.bytes_in_use -= alloc_size;
     }
-    // lijie
-    // LOG(INFO)<<"lijie "<<" deallocate address: "<<ptr;
+    
     port::AlignedFree(ptr);
   }
 
@@ -189,12 +187,10 @@ REGISTER_MEM_ALLOCATOR("DefaultCPUAllocator", 100, CPUAllocatorFactory);
 
 namespace {
 
-// lijie
 
 // flock: https://blog.csdn.net/sin0803/article/details/38389701
 
 void err_sys(const char *s) {
-    LOG(INFO)<<"lijie error "<<s;
     perror(s);
     exit(1);
 }
@@ -442,7 +438,6 @@ template<typename T>
 T* MMapAllocator<T>::allocate(std::string mem_id_str,off_t mem_size,bool& mem_not_exist) {
     // std::string mmap_file = "/dev/shm/serving_memorys/" + mem_id_str;
     // mem_size = mem_size * sizeof(T);
-    // LOG(INFO)<<"lijie "<<" memory_num_bytes: "<< mem_size;
     // mem_not_exist = false;
     // if(!mmap_file_exist(mem_id_str)) {
     //     create_mmap_file(f_lock,mmap_file,mem_size);
@@ -454,7 +449,6 @@ T* MMapAllocator<T>::allocate(std::string mem_id_str,off_t mem_size,bool& mem_no
   
     std::string mmap_file = "/dev/shm/serving_memorys/" + mem_id_str;
     mem_size = mem_size * sizeof(T);
-    // LOG(INFO)<<"lijie "<<" memory_num_bytes: "<< mem_size;
     if(mmap_file_exist(mem_id_str)) {
       mem_not_exist = false;
     } else {
@@ -485,8 +479,7 @@ class CPUMmapAllocator : public Allocator {
   explicit CPUMmapAllocator(std::string mmap_id):mem_not_exist_(true) { this->mmap_id_ = mmap_id; }
 
   ~CPUMmapAllocator() override { 
-    // lijie
-    // LOG(INFO)<<"lijie "<<" mmap deconstructor";
+
   }
 
   string Name() override { return "cpu_mmap"; }
@@ -507,8 +500,7 @@ class CPUMmapAllocator : public Allocator {
 
     // std::string lock_file = "/home/tank/lijie/serving_locks/" + this->mmap_id_;
     // std::string memory_id_str = this->mmap_id_;
-    // lijie
-    // LOG(INFO)<<"lijie "<<" memory_num_bytes: "<< num_bytes;
+
     MMapAllocator<char> mmap_alloc(lock_file);
     void *p = (void*)mmap_alloc.allocate(memory_id_str,num_bytes,this->mem_not_exist_);
     assert(reinterpret_cast<intptr_t>(p) % 64 == 0);
@@ -517,8 +509,6 @@ class CPUMmapAllocator : public Allocator {
   }
 
   void DeallocateRaw(void* ptr) override {
-    // lijie
-    // LOG(INFO)<<"lijie "<<" mmap deallocate address: "<<ptr;
     // port::AlignedFree(ptr);
   }
 

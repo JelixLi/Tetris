@@ -312,7 +312,6 @@ Status Server::BuildAndStart(const Options& server_options) {
         pf_options));
   }
 
-  // lijie
   // // 0.0.0.0" is the way to listen on localhost in gRPC.
   // const string server_address =
   //     "0.0.0.0:" + std::to_string(server_options.grpc_port);

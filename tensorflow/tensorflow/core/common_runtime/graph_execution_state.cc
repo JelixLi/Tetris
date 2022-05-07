@@ -93,8 +93,7 @@ GraphExecutionState::~GraphExecutionState() {
   if (options.session_options->config.graph_options().place_pruned_graph() ||
       !options.session_options->config.experimental()
            .optimize_for_static_graph()) {
-    // lijie
-    // LOG(INFO) << "lijie-session-1";
+    
     auto ret = absl::WrapUnique(new GraphExecutionState(
         absl::make_unique<GraphDef>(std::move(graph_def)), std::move(flib_def),
         options));
@@ -110,8 +109,7 @@ GraphExecutionState::~GraphExecutionState() {
     }
     *out_state = std::move(ret);
   } else {
-    // lijie
-    // LOG(INFO) << "lijie-session-2";
+    
     auto ret = absl::WrapUnique(
         new GraphExecutionState(nullptr, std::move(flib_def), options));
     auto base_graph = absl::make_unique<Graph>(OpRegistry::Global());
@@ -120,7 +118,7 @@ GraphExecutionState::~GraphExecutionState() {
     TF_RETURN_IF_ERROR(ret->InitBaseGraph(std::move(base_graph)));
     *out_state = std::move(ret);
   }
-  // lijie
+  
   // LOG(INFO) << "flib_def_" << sizeof(*flib_def_);
   // LOG(INFO) << "rewrite_metadata_" << sizeof(*rewrite_metadata_);
   // LOG(INFO) << "graph_" << sizeof(*graph_);

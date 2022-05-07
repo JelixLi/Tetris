@@ -177,13 +177,8 @@ Status RunOnce(const RunOptions& run_options,
   // Be sure to call ReleaseCallable() regardless of the outcome of
   // RunCallable().
 
-  // // lijie
-  // LOG(INFO)<<"lijie "<<"Done RunOnce 1";
 
   session->ReleaseCallable(callable_handle).IgnoreError();
-
-  // // lijie
-  // LOG(INFO)<<"lijie "<<"Done RunOnce 2";
 
   return run_status;
 }
@@ -197,8 +192,7 @@ Status RunInitOp(const RunOptions& run_options, const string& export_dir,
   if (!init_op_name.empty()) {
     LOG(INFO) << "Running initialization op on SavedModel bundle at path: "
               << export_dir;
-    //lijie
-    LOG(INFO) <<"lijie "<<"init_op_name: "<< init_op_name;
+
     std::vector<std::pair<string, Tensor>> inputs;
     AddAssetsTensorsToInputs(export_dir, asset_file_defs, &inputs);
     RunMetadata run_metadata;
@@ -214,8 +208,7 @@ Status RunRestore(const RunOptions& run_options, const string& export_dir,
                   const std::vector<AssetFileDef>& asset_file_defs,
                   Session* session) {
   LOG(INFO) << "Restoring SavedModel bundle.";
-  //lijie
-  LOG(INFO) <<"lijie "<<"restore_op_name: "<< string(restore_op_name);
+
   // Find path to variables to be restored in export directory.
   const string variables_directory =
       io::JoinPath(export_dir, kSavedModelVariablesDirectory);
@@ -281,7 +274,7 @@ Status LoadSavedModel(const SessionOptions& session_options,
                       const RunOptions& run_options, const string& export_dir,
                       const std::unordered_set<string>& tags,
                       SavedModelBundle* const bundle) {
-  // // lijie
+
   // SavedModelBundle legacy_bundle;
   // SessionOptions rewritten_options(session_options);
   // // We disallow calls to Session::Extend() on the returned session, so we can
@@ -301,7 +294,6 @@ Status LoadSavedModel(const SessionOptions& session_options,
   const uint64 start_microseconds = Env::Default()->NowMicros();
   // const Status status = LoadSavedModelInternal(session_options, run_options,
   //                                              export_dir, tags, bundle);
-  // lijie
   const Status status = LoadSavedModelInternal(session_options, run_options,
                                                export_dir, tags, bundle);
   // auto bundle_mutable_signature_def = bundle->meta_graph_def.mutable_signature_def();

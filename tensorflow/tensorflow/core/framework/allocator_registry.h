@@ -38,7 +38,7 @@ class AllocatorFactory {
   // Create an Allocator.
   virtual Allocator* CreateAllocator() = 0;
 
-  // lijie
+  
   virtual Allocator* CreateMmapAllocator(std::string mmap_id) { return nullptr; }
 
   // Create a SubAllocator. If NumaEnabled() is true, then returned SubAllocator
@@ -74,7 +74,7 @@ class AllocatorFactoryRegistry {
   // been registered with the same priority, picks one by unspecified criteria.
   Allocator* GetAllocator();
 
-  // lijie
+  
   Allocator* GetMmapAllocator(std::string mmap_id);
 
   // Returns 'best fit' SubAllocator.  First look for the highest priority
