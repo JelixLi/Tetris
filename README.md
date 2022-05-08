@@ -228,6 +228,7 @@ Deleting: resnet-152-keras.
 Removing old function.
 ```
 ## Start load generator
+We have pre-compiled the image of a load generator, and can be downloaded through following instructions.
 ```
 $ sudo docker pull registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single
 
