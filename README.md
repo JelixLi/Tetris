@@ -199,3 +199,9 @@ WARNING! Communication is not secure, please consider using HTTPS. Letsencrypt.o
 Deployed. 202 Accepted.
 URL: http://127.0.0.1:31212/function/resnet-152-keras
 ```
+Delete functions (if needed).
+```
+$ faasdev-cli remove  -f resnet152.yaml 
+Deleting: resnet-152-keras.
+Removing old function.
+```
