@@ -300,3 +300,17 @@ $ python average_memory.py output.txt
 
 Average memory: 62.124
 ```
+For comparison, we also provided an compiled image of INFless.
+```
+$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bo
+```
+And then replace the openfaas/faas-netes:latest-dev with the newly downloaded image and restart the gateway component.
+```
+$ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bo openfaas/faas-netes:latest-dev
+
+$ sudo kubectl get pods -n openfaasdev | grep gateway
+
+gatewaydev-6bfb4cc9f8-x8jcx                    2/2     Running       0          148m
+
+$ sudo kubectl delete pod gatewaydev-6bfb4cc9f8-x8jcx -n openfaasdev
+```
