@@ -158,6 +158,7 @@ The namespace should be created first, and the namespace configuration is [here]
 $ sudo kubectl apply -f namespace.yaml
 
 $ sudo kubectl get namespace | grep dev
+
 openfaasdev            Active   114d
 openfaasdev-fn         Active   114d
 ```
@@ -185,6 +186,7 @@ The system components are [here](https://github.com/JelixLi/Tetris/tree/main/ope
 $ sudo kubectl apply -f components/
 
 $ sudo kubectl get deployment -n openfaasdev
+
 NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
 basic-auth-plugindev          1/1     1            1           113d
 cpuagentcontroller-deploy-0   1/1     1            1           20d
@@ -195,7 +197,9 @@ prometheusdev                 1/1     1            1           113d
 Before the deployment of functions, models should be downloaded first [here](https://www.aliyundrive.com/s/bN7wjKib5qS).
 ```
 $ mkdir -p /home/tank/lijie/serving_models/
+
 $ tree /home/tank/lijie/serving_models/resnet-152-keras/
+
 /home/tank/lijie/serving_models/resnet-152-keras/
 └── 1
     ├── assets
@@ -209,6 +213,7 @@ $ tree /home/tank/lijie/serving_models/resnet-152-keras/
 We have provided an example function [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/resnet152.yaml).
 ```
 $ faasdev-cli  deploy -f resnet152.yaml 
+
 Deploying: resnet-152-keras.
 WARNING! Communication is not secure, please consider using HTTPS. Letsencrypt.org offers free SSL/TLS certificates.
 
@@ -218,6 +223,25 @@ URL: http://127.0.0.1:31212/function/resnet-152-keras
 Delete functions (if needed).
 ```
 $ faasdev-cli remove  -f resnet152.yaml 
+
 Deleting: resnet-152-keras.
 Removing old function.
+```
+## Start load generator
+```
+$ sudo docker run --net=host -p 8081:8081 -v traces:/traces load_generator:sample 192.168.1.136 resnet-152-keras stable 50 10 192.168.1.136
+
+WARNING: Published ports are discarded when using host network mode
+Gateway address: 192.168.1.136
+Model: resnet-152-keras
+Workload type: stable
+Max qps: 50
+Load period (minutes): 10
+Load generator address :192.168.1.136
+ * Serving Flask app 'load_generator' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://192.168.1.136:8081 (Press CTRL+C to quit)
 ```
