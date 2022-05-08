@@ -278,3 +278,25 @@ Load generator address :192.168.1.136
  * Debug mode: off
  * Running on http://192.168.1.136:8081 (Press CTRL+C to quit)
 ```
+## Memory measurement
+For simplicity, we have provided simple [script](https://github.com/JelixLi/Tetris/blob/main/scripts/total_memory.py) for measuring the total memory comsumed by inference function instances on a single node every 10s.
+```
+$ python total_memory.py
+
+$ cat output.txt
+
+2022-05-05 04:40:11.634803 62.07
+2022-05-05 04:40:20.337647 62.09
+2022-05-05 04:40:29.065235 62.09
+2022-05-05 04:40:37.798275 62.09
+2022-05-05 04:42:00.717909 62.15
+2022-05-05 04:42:09.423884 62.15
+2022-05-05 04:42:18.151213 62.15
+2022-05-05 04:42:26.863815 62.15
+2022-05-05 04:42:35.579574 62.15
+2022-05-05 04:42:44.296924 62.15
+
+$ python average_memory.py output.txt 
+
+Average memory: 62.124
+```
