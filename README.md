@@ -190,6 +190,20 @@ gatewaydev                    1/1     1            1           113d
 prometheusdev                 1/1     1            1           113d
 ```
 ## Deploy functions
+Before the deployment of functions, models should be downloaded first [here](https://www.aliyundrive.com/s/bN7wjKib5qS).
+```
+$ mkdir -p /home/tank/lijie/serving_models/
+$ tree /home/tank/lijie/serving_models/resnet-152-keras/
+/home/tank/lijie/serving_models/resnet-152-keras/
+└── 1
+    ├── assets
+    ├── saved_model.pb
+    └── variables
+        ├── variables.data-00000-of-00001
+        └── variables.index
+
+3 directories, 3 files
+```
 We have provided an example function [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/resnet152.yaml).
 ```
 $ faasdev-cli  deploy -f resnet152.yaml 
