@@ -1,0 +1,50 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: collector
+  name: collector
+  namespace: "openfaas-lj"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: collector
+  template:
+    metadata:
+      labels:
+        app: collector
+    spec:
+      nodeSelector:
+        openfaas: lj
+      serviceAccountName: collector
+      containers:
+      - name: collector
+        image: collector:v1
+        # imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
+        # resources:
+        #     limits:
+        #       memory: 50Mi
+        #     requests:
+        #       memory: 25Mi
+        volumeMounts:
+        - name: serving-locks
+          mountPath: /home/tank/lijie/serving_locks/
+        - name: serving-memorys
+          mountPath: /dev/shm/serving_memorys
+        - name: host-name
+          mountPath: /root/hostname
+      volumes:
+        - name: serving-locks
+          hostPath:
+            path: /home/tank/lijie/serving_locks/
+            type: Directory
+        - name: serving-memorys
+          hostPath:
+            path: /dev/shm/serving_memorys
+            type: Directory
+        - name: host-name
+          hostPath:
+            path: /etc/hostname
