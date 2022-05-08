@@ -229,7 +229,36 @@ Removing old function.
 ```
 ## Start load generator
 ```
-$ sudo docker run --net=host -p 8081:8081 -v traces:/traces load_generator:sample 192.168.1.136 resnet-152-keras stable 50 10 192.168.1.136
+$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single
+
+single: Pulling from gcr_cn/load_generator
+0e29546d541c: Pulling fs layer 
+9b829c73b52b: Pulling fs layer 
+cb5b7ae36172: Pulling fs layer 
+6494e4811622: Waiting 
+6f9f74896dfa: Pull complete 
+fcb6d5f7c986: Pull complete 
+7a72d131c196: Pull complete 
+c4221d178521: Pull complete 
+71d5c5b5a91f: Pull complete 
+b8bb49f782af: Pull complete 
+9a3b44001ade: Pull complete 
+7d24f12c3225: Pull complete 
+562eca055017: Pull complete 
+552b82c68c4c: Pull complete 
+4effcd1477d1: Pull complete 
+e10b741b42b6: Pull complete 
+4faa2785ff4d: Pull complete 
+9330a0295911: Pull complete 
+9117fbc354fc: Pull complete 
+Digest: sha256:20e5fc2eb976b2af1bd87490bb3b38d1c373ea062bc5ae7c3fcb6afd688c26cd
+Status: Downloaded newer image for registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single
+registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single
+
+$ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single load_generator:single
+```
+```
+$ sudo docker run --net=host -p 8081:8081 -v traces:/traces load_generator:single 192.168.1.136 resnet-152-keras stable 50 10 192.168.1.136
 
 WARNING: Published ports are discarded when using host network mode
 Gateway address: 192.168.1.136
