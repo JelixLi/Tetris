@@ -279,7 +279,7 @@ Load generator address :192.168.1.136
  * Running on http://192.168.1.136:8081 (Press CTRL+C to quit)
 ```
 ## Memory measurement
-For simplicity, we have provided simple [script](https://github.com/JelixLi/Tetris/blob/main/scripts/total_memory.py) for measuring the total memory comsumed by inference function instances on a single node every 10s.
+For simplicity, we have provided simple [script](https://github.com/JelixLi/Tetris/tree/main/scripts) for measuring the total memory comsumed by inference function instances on a single node every 10s.
 ```
 $ python total_memory.py
 
