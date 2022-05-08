@@ -258,7 +258,7 @@ registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single
 
 $ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single load_generator:single
 ```
-Following instruction start a load generator, and there are three types of workloads (stable/period/burst). And the results could be found in traces.
+Following instruction start a load generator, and there are three types of workloads (stable/period/burst). And the inference latencies could be found in the traces directories.
 ```
 $ mkdir traces
 
