@@ -1,6 +1,6 @@
 version: 1.0
 cluster-capacity:
-  - node-label: kubernetes.io/hostname=kube-node
+  - node-label: kubernetes.io/hostname=kube-master
     hyper-thread-offset: 40
     cpu-thread-oversell: 0
     gpu-core-oversell-percentage: 0
