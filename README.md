@@ -152,3 +152,40 @@ registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp
 
 $ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp openfaas/faas-netes:latest-dev
 ```
+## Create namespace
+The namespace should be created first, and the namespace configuration is [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/namespaces.yml). The openfaasdev is the namespace for system components and openfaasdev-fn is the namespace for functions.
+```
+$ sudo kubectl apply -f namespace.yaml
+
+$ sudo kubectl get namespace | grep dev
+openfaasdev            Active   114d
+openfaasdev-fn         Active   114d
+```
+## Prepare system configurations
+We provided a sample single node configuration file [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/config/clusterCapConfig-dev-1.yml). 
+
+*Note: This configuration file here assumes the node hostname to be kube-node.*
+
+```
+$ mkdir -p /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1
+
+$ mv clusterCapConfig-dev-1.yml /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1/
+```
+Also additional configuration data need to be downloaded from [here](https://pan.baidu.com/s/1YuZzsIjUePm-3K2Jt44F6g?pwd=eqit).
+```
+$ mkdir -p /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1/profiler/
+
+$ tar -zxvf data.tar.gz -C /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1/profiler/
+```
+## Deploy system components
+The system components are [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/components).
+```
+$ sudo kubectl apply -f components/*
+
+$ sudo kubectl get deployment -n openfaasdev
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+basic-auth-plugindev          1/1     1            1           113d
+cpuagentcontroller-deploy-0   1/1     1            1           20d
+gatewaydev                    1/1     1            1           113d
+prometheusdev                 1/1     1            1           113d
+```
