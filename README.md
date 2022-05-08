@@ -152,3 +152,8 @@ registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp
 
 $ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp openfaas/faas-netes:latest-dev
 ```
+## Create namespace
+The namespace should be created first, and the namespace configuration is [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/namespaces.yml).
+```
+$ sudo kubectl apply -f namespace.yaml
+```
