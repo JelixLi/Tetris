@@ -258,7 +258,10 @@ registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single
 
 $ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/load_generator:single load_generator:single
 ```
+Following instruction start a load generator, and there are three types of workloads (stable/period/burst). And the results could be found in traces.
 ```
+$ mkdir traces
+
 $ sudo docker run --net=host -p 8081:8081 -v traces:/traces load_generator:single 192.168.1.136 resnet-152-keras stable 50 10 192.168.1.136
 
 WARNING: Published ports are discarded when using host network mode
