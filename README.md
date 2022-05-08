@@ -150,4 +150,5 @@ Digest: sha256:e29879977eb0be6abf8406a4812ec07ba65f206b7396037c25d0b665a23b7584
 Status: Downloaded newer image for registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp
 registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp
 
+$ sudo docker tag registry.cn-hangzhou.aliyuncs.com/gcr_cn/faas-netes:latest-dev-bp openfaas/faas-netes:latest-dev
 ```
