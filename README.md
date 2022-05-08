@@ -161,3 +161,13 @@ $ sudo kubectl get namespace | grep dev
 openfaasdev            Active   114d
 openfaasdev-fn         Active   114d
 ```
+## Prepare system configurations
+We provided a sample single node configuration file [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/config/clusterCapConfig-dev-1.yml). 
+
+*Note: This configuration file here assumes the node hostname to be kube-node.*
+
+```
+$ mkdir -p /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1
+
+$ mv clusterCapConfig-dev-1.yml /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1/
+```
