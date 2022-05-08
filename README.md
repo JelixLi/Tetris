@@ -180,7 +180,7 @@ $ tar -zxvf data.tar.gz -C /home/tank/lijie/goWorkspace-dev/src/github.com/openf
 ## Deploy system components
 The system components are [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/components).
 
-*Note: the item faas_loadgen_host in [gateway-dep.yaml](https://github.com/JelixLi/Tetris/blob/main/openfaas/components/gateway-dep.yml) should be modified to the ip address of your node*
+*Note: the item faas_loadgen_host in [gateway-dep.yaml](https://github.com/JelixLi/Tetris/blob/main/openfaas/components/gateway-dep.yml) should be modified to the ip address of your node before the deployment.*
 ```
 $ sudo kubectl apply -f components/
 
