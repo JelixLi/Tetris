@@ -180,7 +180,7 @@ $ tar -zxvf data.tar.gz -C /home/tank/lijie/goWorkspace-dev/src/github.com/openf
 ## Deploy system components
 The system components are [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/components).
 ```
-$ sudo kubectl apply -f components/*
+$ sudo kubectl apply -f components/
 
 $ sudo kubectl get deployment -n openfaasdev
 NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
