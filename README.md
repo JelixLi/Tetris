@@ -164,7 +164,7 @@ openfaasdev-fn         Active   114d
 ## Prepare system configurations
 We provided a sample single node configuration file [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/config/clusterCapConfig-dev-1.yml). 
 
-*Note: This configuration file here assumes the node hostname to be kube-node.*
+*Note: This configuration file here assumes the node hostname to be kube-master.*
 
 ```
 $ mkdir -p /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1
