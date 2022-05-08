@@ -177,3 +177,15 @@ $ mkdir -p /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/y
 
 $ tar -zxvf data.tar.gz -C /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1/profiler/
 ```
+## Deploy system components
+The system components are [here](https://github.com/JelixLi/Tetris/tree/main/openfaas/components).
+```
+$ sudo kubectl apply -f components/*
+
+$ sudo kubectl get deployment -n openfaasdev
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+basic-auth-plugindev          1/1     1            1           113d
+cpuagentcontroller-deploy-0   1/1     1            1           20d
+gatewaydev                    1/1     1            1           113d
+prometheusdev                 1/1     1            1           113d
+```
