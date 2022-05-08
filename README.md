@@ -192,7 +192,7 @@ prometheusdev                 1/1     1            1           113d
 ## Deploy functions
 We have provided an example function [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/resnet152.yaml).
 ```
-$ sudo faasdev-cli  deploy -f resnet152.yaml 
+$ faasdev-cli  deploy -f resnet152.yaml 
 Deploying: resnet-152-keras.
 WARNING! Communication is not secure, please consider using HTTPS. Letsencrypt.org offers free SSL/TLS certificates.
 
