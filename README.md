@@ -314,3 +314,4 @@ gatewaydev-6bfb4cc9f8-x8jcx                    2/2     Running       0          
 
 $ sudo kubectl delete pod gatewaydev-6bfb4cc9f8-x8jcx -n openfaasdev
 ```
+Also, the old function should be deleted and replace it with the [new one](https://github.com/JelixLi/Tetris/blob/main/openfaas/resnet152-original.yaml).
