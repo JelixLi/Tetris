@@ -1,5 +1,5 @@
 # Models
-The models have been uploaded to the Alibaba Cloud Storage and could be accessed through the table below.
+The models have been uploaded to the Baidu Cloud Storage and could be accessed through the table below.
 
 |  Model Name   | Description  |
 |  ----  | ----  |
