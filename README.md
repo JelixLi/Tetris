@@ -194,7 +194,7 @@ gatewaydev                    1/1     1            1           113d
 prometheusdev                 1/1     1            1           113d
 ```
 ## Deploy functions
-Before the deployment of functions, models should be downloaded from [here](https://www.aliyundrive.com/s/bN7wjKib5qS).
+Before the deployment of functions, models should be downloaded from [here](https://pan.baidu.com/s/1bF9TW7hkZn8wVu9whZjkCQ?pwd=daca).
 ```
 $ mkdir -p /home/tank/lijie/serving_models/
 
