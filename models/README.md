@@ -1,5 +1,5 @@
 # Models
-The models have been uploaded to the Baidu Cloud Storage and could be accessed through the table below.
+The models have been uploaded to the Baidu Cloud Storage and could be accessed through the table below. The [Vgg16](https://1drv.ms/u/s!AoP-wwp0EkoEg0-cNWVqBh6wGXmX?e=MTDazE&download=1) and [Resnet152](https://1drv.ms/u/s!AoP-wwp0EkoEg04mK-wgWVarvb1j?e=TeFdiK&download=1) model can also be downloaded from OneDrive.
 
 |  Model Name   | Description  |
 |  ----  | ----  |
