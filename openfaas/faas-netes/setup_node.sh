@@ -1,0 +1,1 @@
+mkdir -p /home/tank/lijie/serving_locks/ && mkdir -p /dev/shm/serving_memorys/ && mkdir -p /home/tank/lijie/serving_models/

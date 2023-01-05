@@ -1,0 +1,63 @@
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: openfaasdev
+    component: basic-auth-plugindev
+  name: basic-auth-plugindev
+  namespace: "openfaasdev"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basic-auth-plugindev
+  template:
+    metadata:
+      annotations:
+        prometheus.io.scrape: "false"
+      labels:
+        app: basic-auth-plugindev
+    spec:
+      volumes:
+      - name: auth
+        secret:
+          secretName: basic-auth
+      containers:
+      - name:  basic-auth-plugindev
+        resources:
+            requests:
+              cpu: 2000m
+              memory: 4096Mi
+            
+        image: openfaas/basic-auth-plugin:0.17.0
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsUser: 10001
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          timeoutSeconds: 5
+        env:
+        - name: secret_mount_path
+          value: "/var/secrets"
+        - name: basic_auth
+          value: "true"
+        volumeMounts:
+        - name: auth
+          readOnly: true
+          mountPath: "/var/secrets"
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+      nodeSelector:
+        kubernetes.io/hostname: kube-master

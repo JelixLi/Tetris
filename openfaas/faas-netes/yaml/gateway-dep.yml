@@ -1,0 +1,143 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: openfaasdev
+    component: gatewaydev
+  name: gatewaydev
+  namespace: "openfaasdev"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gatewaydev
+  template:
+    metadata:
+      annotations:
+        prometheus.io.scrape: "true"
+        prometheus.io.port: "8182"
+      labels:
+        app: gatewaydev
+    spec:
+      serviceAccountName: faas-controllerdev
+      volumes:
+      - name: faas-netes-temp-volume
+        emptyDir: {}
+      - name: cluster-config
+        hostPath:
+          path: /root/yaml
+      - name: auth
+        secret:
+          secretName: basic-auth
+      containers:
+      - name: gatewaydev
+        resources:
+            requests:
+              memory: 4096Mi
+            
+        image: openfaas/gateway:latest-dev
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsUser: 10001
+        env:
+        - name: faas_prometheus_port
+          value: "9190"
+        - name: faas_prometheus_host
+          value: "prometheusdev"
+        - name: gateway_tcp_port
+          value: "8180"
+        - name: metrics_server_port
+          value: "8182"
+        - name: read_timeout
+          value: "65s"
+        - name: write_timeout
+          value: "65s"
+        - name: upstream_timeout
+          value: "60s"
+        - name: functions_provider_url
+          value: "http://127.0.0.1:8181/"
+        - name: direct_functions
+          value: "false"
+        # - name: direct_functions
+        #   value: "true"
+        - name: direct_functions_suffix
+          value: "openfaasdev-fn.svc.cluster.local"
+        - name: function_namespace
+          value: "openfaasdev-fn"
+        - name: use_nats
+          value: "false"
+        - name: faas_nats_address
+          value: "nats.openfaasdev.svc.cluster.local"
+        - name: faas_nats_port
+          value: "4222"
+        - name: faas_nats_channel
+          value: "faas-request"
+        - name: basic_auth
+          value: "true"
+        - name: secret_mount_path
+          value: "/var/secrets"
+        - name: auth_proxy_url
+          value: "http://basic-auth-plugindev.openfaasdev:8080/validate"
+        - name: auth_pass_body
+          value: "false"
+        # - name: scale_from_zero
+        #   value: "true"
+        - name: scale_from_zero
+          value: "false"
+        - name: max_idle_conns
+          value: "1024"
+        - name: max_idle_conns_per_host
+          value: "1024"
+        volumeMounts:
+        - name: auth
+          readOnly: true
+          mountPath: "/var/secrets"
+        ports:
+        - name: http
+          containerPort: 8180
+          protocol: TCP
+      - name: faas-netesdev
+        resources:
+            requests:
+              memory: 8192Mi
+            
+        image: openfaas/faas-netes:latest-dev
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsUser: 10001
+        env:
+        - name: port
+          value: "8181"
+        # - name: faas_loadgen_port
+        #   value: "8080"
+        # - name: faas_loadgen_host
+        #   value: "192.168.1.109"
+        - name: faas_loadgen_port
+          value: "8081"
+        - name: faas_loadgen_host
+          value: "192.168.1.136"
+        - name: function_namespace
+          value: "openfaasdev-fn"
+        - name: read_timeout
+          value: "60s"
+        - name: write_timeout
+          value: "60s"
+        - name: image_pull_policy
+          value: "IfNotPresent"
+        - name: http_probe
+          value: "false"
+        - name: set_nonroot_user
+          value: "false"
+        volumeMounts:
+        - mountPath: /tmp
+          name: faas-netes-temp-volume
+        - mountPath: /home/app/yaml
+          name: cluster-config
+        ports:
+        - containerPort: 8181
+          protocol: TCP
+      nodeSelector:
+        kubernetes.io/hostname: kube-master
