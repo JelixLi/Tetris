@@ -172,7 +172,7 @@ $ mkdir -p /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/y
 
 $ mv clusterCapConfig-dev-1.yml /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1/
 ```
-Also additional configuration data need to be downloaded from [here](https://pan.baidu.com/s/1sNS1woKr_5321RWx5hwdhw?pwd=tfwk).
+Also additional configuration data need to be downloaded from [here](https://github.com/JelixLi/Tetris/blob/main/openfaas/config/data.tar.gz).
 ```
 $ mkdir -p /home/tank/lijie/goWorkspace-dev/src/github.com/openfaas/faas-netes/yaml_1/profiler/
 
