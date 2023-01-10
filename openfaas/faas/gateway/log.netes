@@ -1,0 +1,1299 @@
+2020/07/24 12:13:37 repository: read clusterCapConfig.yml successfully
+W0724 12:13:37.810865       1 client_config.go:543] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2020/07/24 12:13:37 HTTP Read Timeout: 1m0s
+2020/07/24 12:13:37 HTTP Write Timeout: 1m0s
+2020/07/24 12:13:37 HTTPProbe: false
+2020/07/24 12:13:37 SetNonRootUser: false
+2020/07/24 12:13:37 alert Monitor start successfully, monitor interval= 3s , update interval= 15s
+2020/07/24 12:13:37 cpuAgent controller created in node node28sdc, ip: 10.43.186.241 
+2020/07/24 12:13:37 ------node information----- nodeId=0, nodeName=node28sdc, cpuNum= 80, AgentIp=10.43.186.241, NodeExporterIp=
+2020/07/24 12:13:38 cpuAgent controller created in node node26sdc, ip: 10.43.11.145 
+2020/07/24 12:13:38 ------node information----- nodeId=1, nodeName=node26sdc, cpuNum= 80, AgentIp=10.43.11.145, NodeExporterIp=
+2020/07/24 12:13:41 Error querying Prometheus API: Get http://prometheus:9090/api/v1/query?query=sum%28rate%28gateway_function_invocation_total%7Bfunction_name%3D~%22.%2A%22%2C+code%3D~%22.%2A%22%7D%5B10s%5D%29%29+by+%28function_name%29: dial tcp 10.43.95.127:9090: connect: connection refused
+2020/07/24 12:14:58 repository: update function sleep minReplicas= 5 
+2020/07/24 12:14:58 repository: update function sleep maxReplicas= 10 
+2020/07/24 12:14:58 repository: update function sleep scaleToZero= true 
+2020/07/24 12:14:58 repository: update function sleep FuncCpuCoreBind= 0-5 
+2020/07/24 12:14:58 repository: update function sleep funcQpsPerInstance= 5.000000 
+2020/07/24 12:14:58 repository: update function sleep request resource = &{Memory:200Mi CPU:1000m GPU_Memory:0.2 GPU:0} 
+2020/07/24 12:14:58 repository: update function sleep constraints= [] 
+2020/07/24 12:14:58 repository: update function sleep expectedReplicas= 5 
+2020/07/24 12:14:58 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:14:58 deploy: GPU resource envVars =  [{MODEL_NAME mnist nil} {fprocess python index.py nil} {CUDA_VISIBLE_DEVICES -1 nil} {GPU_MEM_FRACTION 0.2 nil}]
+2020/07/24 12:15:05 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-686817, container f166cf6477ff22ac125dd22da0d3d3e4e21884b2549c53bd03300849a02e5d16, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:15:05 repository: update function sleep availReplicas= 1 
+2020/07/24 12:15:05 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 1, totalMemoryUsed = -1.000000 
+2020/07/24 12:15:05 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-686817:0xc0002cc620] 
+2020/07/24 12:15:05 deploy: Deployment (pods with replicas = 1) created: funcName= sleep, namespace= openfaas-fn 
+2020/07/24 12:15:05 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:15:05 deploy: GPU resource envVars =  [{MODEL_NAME mnist nil} {fprocess python index.py nil} {CUDA_VISIBLE_DEVICES -1 nil} {GPU_MEM_FRACTION 0.2 nil}]
+2020/07/24 12:15:11 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-670414, container 5f0d275a31200e3df8bafb7e74979a3eb5c54b4630f41677c21f49448db70d19, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:15:11 repository: update function sleep availReplicas= 2 
+2020/07/24 12:15:11 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 1, totalMemoryUsed = -1.000000 
+2020/07/24 12:15:11 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n1g-1-670414:0xc000617200] 
+2020/07/24 12:15:11 deploy: Deployment (pods with replicas = 2) created: funcName= sleep, namespace= openfaas-fn 
+2020/07/24 12:15:11 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:15:11 deploy: GPU resource envVars =  [{MODEL_NAME mnist nil} {fprocess python index.py nil} {CUDA_VISIBLE_DEVICES -1 nil} {GPU_MEM_FRACTION 0.2 nil}]
+2020/07/24 12:15:24 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-585044, container 5f4ee0b649a6596c333c82082cd367e77c244ace6df6cb140f556441c92cb7b3, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:15:24 repository: update function sleep availReplicas= 3 
+2020/07/24 12:15:24 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:15:24 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n1g-1-585044:0xc0005a2aa0 sleep-pod-n1g-1-670414:0xc000617200] 
+2020/07/24 12:15:24 deploy: Deployment (pods with replicas = 3) created: funcName= sleep, namespace= openfaas-fn 
+2020/07/24 12:15:24 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:15:24 deploy: GPU resource envVars =  [{MODEL_NAME mnist nil} {fprocess python index.py nil} {CUDA_VISIBLE_DEVICES -1 nil} {GPU_MEM_FRACTION 0.2 nil}]
+2020/07/24 12:15:38 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-308786, container 1f20ebf652ea24deea5d4e4b28f4ee141dcb6495bc67fe78b82b6bbd3cb3f437, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:15:38 repository: update function sleep availReplicas= 4 
+2020/07/24 12:15:38 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 3, totalMemoryUsed = -1.000000 
+2020/07/24 12:15:38 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-585044:0xc0005a2aa0 sleep-pod-n1g-1-670414:0xc000617200] 
+2020/07/24 12:15:38 deploy: Deployment (pods with replicas = 4) created: funcName= sleep, namespace= openfaas-fn 
+2020/07/24 12:15:38 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:15:38 deploy: GPU resource envVars =  [{MODEL_NAME mnist nil} {fprocess python index.py nil} {CUDA_VISIBLE_DEVICES -1 nil} {GPU_MEM_FRACTION 0.2 nil}]
+2020/07/24 12:15:51 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-846446, container 82d140ae72c99a4abe19d177d5dcfee1b9d584b576dbd6c85c17172b9812b9a5, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:15:51 repository: update function sleep availReplicas= 5 
+2020/07/24 12:15:51 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 4, totalMemoryUsed = -1.000000 
+2020/07/24 12:15:51 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-585044:0xc0005a2aa0 sleep-pod-n1g-1-670414:0xc000617200 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:15:51 deploy: Deployment (pods with replicas = 5) created: funcName= sleep, namespace= openfaas-fn 
+2020/07/24 12:15:51 repository: update function sleep in repository podSpec.Name= sleep-pod-n1g-1-846446, podSec.Image= sleep:latest 
+2020/07/24 12:15:51 repository: update function sleep in repository srvSpec.name= sleep, srvSec.Selector= map[faas_function:sleep] 
+2020/07/24 12:15:51 deploy: service created: sleep.openfaas-fn 
+2020/07/24 12:15:57 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:10 repository: update function sleep functionInactiveNum= 1 
+2020/07/24 12:16:13 repository: update function sleep functionInactiveNum= 2 
+2020/07/24 12:16:16 repository: update function sleep functionInactiveNum= 3 
+2020/07/24 12:16:19 repository: update function sleep functionInactiveNum= 4 
+2020/07/24 12:16:22 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:22 repository: update function sleep functionInactiveNum= 5 
+2020/07/24 12:16:28 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:33 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:39 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:44 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:49 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:54 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:16:59 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:17:04 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:17:09 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:17:14 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:17:19 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:17:24 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:17:29 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:17:34 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:17:34 sleep alert: first scale out alert, requiredReplicas =  6
+2020/07/24 12:17:34 repository: update function sleep expectedReplicas= 6 
+2020/07/24 12:17:34 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:17:34 replicas: read replicas - sleep openfaas-fn, 5/6
+2020/07/24 12:17:39 replicas: read replicas - sleep openfaas-fn, 5/6
+2020/07/24 12:17:45 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-017971, container 241c955bf986936c32f6bdfcbe5ed06a2dbb1e524fe8c796000c505a8626c2ae, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:17:45 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:17:45 repository: update function sleep availReplicas= 6 
+2020/07/24 12:17:45 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:17:45 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-585044:0xc0005a2aa0 sleep-pod-n1g-1-670414:0xc000617200 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:17:45 alert:  ------ requiredReplicas= 9 availReplicas= 6 -----
+2020/07/24 12:17:45 sleep alert: scale out has alerted, please wait
+2020/07/24 12:17:45 replicas: read replicas - sleep openfaas-fn, 6/6
+2020/07/24 12:17:46 alert:  ------ requiredReplicas= 8 availReplicas= 6 -----
+2020/07/24 12:17:46 sleep alert: scale out has alerted, please wait
+2020/07/24 12:17:49 alert:  ------ requiredReplicas= 9 availReplicas= 6 -----
+2020/07/24 12:17:49 sleep alert: scale out has alerted, please wait
+2020/07/24 12:17:50 replicas: read replicas - sleep openfaas-fn, 6/6
+2020/07/24 12:17:52 alert:  ------ requiredReplicas= 8 availReplicas= 6 -----
+2020/07/24 12:17:52 sleep alert: scale out alert again, requiredReplicas =  8
+2020/07/24 12:17:52 repository: update function sleep expectedReplicas= 8 
+2020/07/24 12:17:52 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:17:55 replicas: read replicas - sleep openfaas-fn, 6/8
+2020/07/24 12:18:00 replicas: read replicas - sleep openfaas-fn, 6/8
+2020/07/24 12:18:05 replicas: read replicas - sleep openfaas-fn, 6/8
+2020/07/24 12:18:06 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-911574, container e9306de817680a17e7d47210b4a01be41ade88a0ea1542c3ea086245af576360, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:18:06 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:18:06 repository: update function sleep availReplicas= 7 
+2020/07/24 12:18:06 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 3, totalMemoryUsed = -1.000000 
+2020/07/24 12:18:06 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-585044:0xc0005a2aa0 sleep-pod-n1g-1-670414:0xc000617200 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:18:06 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:18:11 replicas: read replicas - sleep openfaas-fn, 7/8
+2020/07/24 12:18:16 replicas: read replicas - sleep openfaas-fn, 7/8
+2020/07/24 12:18:18 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-832826, container 212ea96d40815d4420966f52520975e8cfe31100399c923f4c626c9e6721600e, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:18:18 replicas: scaleup function sleep 's Pod for differ 2 successfully 
+2020/07/24 12:18:18 repository: update function sleep availReplicas= 8 
+2020/07/24 12:18:18 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 4, totalMemoryUsed = -1.000000 
+2020/07/24 12:18:18 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-585044:0xc0005a2aa0 sleep-pod-n1g-1-670414:0xc000617200 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:18:21 replicas: read replicas - sleep openfaas-fn, 8/8
+2020/07/24 12:18:22 alert:  ------ requiredReplicas= 9 availReplicas= 8 -----
+2020/07/24 12:18:22 sleep alert: scale out alert again, requiredReplicas =  9
+2020/07/24 12:18:22 repository: update function sleep expectedReplicas= 9 
+2020/07/24 12:18:22 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:18:26 replicas: read replicas - sleep openfaas-fn, 8/9
+2020/07/24 12:18:28 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-505584, container 7ed0e8e501625cdc569ad54a4f336dcd561000818f797c411275a596948359fa, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:18:28 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:18:28 repository: update function sleep availReplicas= 9 
+2020/07/24 12:18:28 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 5, totalMemoryUsed = -1.000000 
+2020/07/24 12:18:28 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-585044:0xc0005a2aa0 sleep-pod-n1g-1-670414:0xc000617200 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:18:28 alert:  ------ requiredReplicas= 8 availReplicas= 9 -----
+2020/07/24 12:18:28 sleep alert: scale in alert again, requiredReplicas =  8
+2020/07/24 12:18:28 repository: update function sleep expectedReplicas= 8 
+2020/07/24 12:18:28 scheduler: decide to delete podName = sleep-pod-n1g-1-585044, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:18:28 replicas: function sleep deleted pod sleep-pod-n1g-1-585044 successfully 
+2020/07/24 12:18:28 repository: update function sleep availReplicas= 8 
+2020/07/24 12:18:28 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 3, totalMemoryUsed = -1.000000 
+2020/07/24 12:18:28 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-670414:0xc000617200 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:18:31 replicas: read replicas - sleep openfaas-fn, 8/8
+2020/07/24 12:18:34 alert:  ------ requiredReplicas= 9 availReplicas= 8 -----
+2020/07/24 12:18:34 sleep alert: scale out has alerted, please wait
+2020/07/24 12:18:36 replicas: read replicas - sleep openfaas-fn, 8/8
+2020/07/24 12:18:40 alert:  ------ requiredReplicas= 9 availReplicas= 8 -----
+2020/07/24 12:18:40 sleep alert: scale out alert again, requiredReplicas =  9
+2020/07/24 12:18:40 repository: update function sleep expectedReplicas= 9 
+2020/07/24 12:18:40 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:18:41 replicas: read replicas - sleep openfaas-fn, 8/9
+2020/07/24 12:18:46 replicas: read replicas - sleep openfaas-fn, 8/9
+2020/07/24 12:18:49 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-982829, container fffb1059ed322ef39af3a443ed6d059ade6857b7cd8972d828041c61a1735a0f, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:18:49 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:18:49 repository: update function sleep availReplicas= 9 
+2020/07/24 12:18:49 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 6, totalMemoryUsed = -1.000000 
+2020/07/24 12:18:49 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-670414:0xc000617200 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:18:49 alert:  ------ requiredReplicas= 8 availReplicas= 9 -----
+2020/07/24 12:18:49 sleep alert: scale in alert again, requiredReplicas =  8
+2020/07/24 12:18:49 repository: update function sleep expectedReplicas= 8 
+2020/07/24 12:18:49 scheduler: decide to delete podName = sleep-pod-n1g-1-670414, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:18:49 replicas: function sleep deleted pod sleep-pod-n1g-1-670414 successfully 
+2020/07/24 12:18:49 repository: update function sleep availReplicas= 8 
+2020/07/24 12:18:49 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:18:49 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:18:51 replicas: read replicas - sleep openfaas-fn, 8/8
+2020/07/24 12:18:55 alert:  ------ requiredReplicas= 9 availReplicas= 8 -----
+2020/07/24 12:18:55 sleep alert: scale out has alerted, please wait
+2020/07/24 12:18:56 replicas: read replicas - sleep openfaas-fn, 8/8
+2020/07/24 12:19:01 replicas: read replicas - sleep openfaas-fn, 8/8
+2020/07/24 12:19:04 alert:  ------ requiredReplicas= 9 availReplicas= 8 -----
+2020/07/24 12:19:04 sleep alert: scale out alert again, requiredReplicas =  9
+2020/07/24 12:19:04 repository: update function sleep expectedReplicas= 9 
+2020/07/24 12:19:04 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:19:06 replicas: read replicas - sleep openfaas-fn, 8/9
+2020/07/24 12:19:11 replicas: read replicas - sleep openfaas-fn, 8/9
+2020/07/24 12:19:13 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-300490, container 3bf9069a31faa92e44c5e229921a8de53070ca1fd7bdc3cf0350cc0d6e240159, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:19:13 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:19:13 repository: update function sleep availReplicas= 9 
+2020/07/24 12:19:13 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 7, totalMemoryUsed = -1.000000 
+2020/07/24 12:19:13 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-846446:0xc00042b480] 
+2020/07/24 12:19:16 replicas: read replicas - sleep openfaas-fn, 9/9
+2020/07/24 12:19:19 alert:  ------ requiredReplicas= 8 availReplicas= 9 -----
+2020/07/24 12:19:19 sleep alert: scale in alert again, requiredReplicas =  8
+2020/07/24 12:19:19 repository: update function sleep expectedReplicas= 8 
+2020/07/24 12:19:19 scheduler: decide to delete podName = sleep-pod-n1g-1-846446, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:19:19 replicas: function sleep deleted pod sleep-pod-n1g-1-846446 successfully 
+2020/07/24 12:19:19 repository: update function sleep availReplicas= 8 
+2020/07/24 12:19:19 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 1, totalMemoryUsed = -1.000000 
+2020/07/24 12:19:19 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80 sleep-pod-n1g-1-308786:0xc00062c780] 
+2020/07/24 12:19:21 replicas: read replicas - sleep openfaas-fn, 8/8
+2020/07/24 12:19:25 alert:  ------ requiredReplicas= 9 availReplicas= 8 -----
+2020/07/24 12:19:25 sleep alert: scale out alert again, requiredReplicas =  9
+2020/07/24 12:19:25 repository: update function sleep expectedReplicas= 9 
+2020/07/24 12:19:25 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:19:26 replicas: read replicas - sleep openfaas-fn, 8/9
+2020/07/24 12:19:31 replicas: read replicas - sleep openfaas-fn, 8/9
+2020/07/24 12:19:37 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-825832, container 64f2bf40988a969d0f99309373efba3079ac1223bd9671104f29660208a2b600, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:19:37 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:19:37 repository: update function sleep availReplicas= 9 
+2020/07/24 12:19:37 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:19:37 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-825832:0xc000593ca0] 
+2020/07/24 12:19:37 alert:  ------ requiredReplicas= 10 availReplicas= 9 -----
+2020/07/24 12:19:37 sleep alert: scale out has alerted, please wait
+2020/07/24 12:19:37 replicas: read replicas - sleep openfaas-fn, 9/9
+2020/07/24 12:19:37 alert:  ------ requiredReplicas= 10 availReplicas= 9 -----
+2020/07/24 12:19:37 sleep alert: scale out has alerted, please wait
+2020/07/24 12:19:40 alert:  ------ requiredReplicas= 10 availReplicas= 9 -----
+2020/07/24 12:19:40 sleep alert: scale out alert again, requiredReplicas =  10
+2020/07/24 12:19:40 repository: update function sleep expectedReplicas= 10 
+2020/07/24 12:19:40 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:19:42 replicas: read replicas - sleep openfaas-fn, 9/10
+2020/07/24 12:19:47 replicas: read replicas - sleep openfaas-fn, 9/10
+2020/07/24 12:19:47 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-457103, container 7648d7e036f902c6bfa2e83cc866521d18fc825819cd8ee2685e1666e9f19b9b, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:19:47 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:19:47 repository: update function sleep availReplicas= 10 
+2020/07/24 12:19:47 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 8, totalMemoryUsed = -1.000000 
+2020/07/24 12:19:47 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-457103:0xc0005a2740 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80 sleep-pod-n1g-1-308786:0xc00062c780 sleep-pod-n1g-1-825832:0xc000593ca0] 
+2020/07/24 12:19:52 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:19:57 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:02 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:17 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:22 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:27 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:32 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:37 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:42 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:47 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:52 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:20:57 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:02 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:17 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:23 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:28 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:33 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:38 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:43 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:48 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:53 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:21:58 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:03 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:08 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:13 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:18 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:23 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:28 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:33 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:38 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:43 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:48 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:53 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:22:58 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:03 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:08 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:13 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:18 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:23 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:28 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:33 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:38 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:43 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:48 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:53 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:23:58 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:03 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:08 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:13 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:18 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:23 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:28 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:34 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:39 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:44 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:49 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:54 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:24:59 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:04 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:09 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:14 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:19 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:24 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:29 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:34 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:39 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:44 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:49 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:54 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:25:59 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:04 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:09 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:10 <nil>  minReplicas <= 0
+2020/07/24 12:26:10 repository: update function sleep2 minReplicas= 1 
+2020/07/24 12:26:10 repository: update function sleep2 maxReplicas= 10 
+2020/07/24 12:26:10 repository: update function sleep2 scaleToZero= false 
+2020/07/24 12:26:10 repository: update function sleep2 FuncCpuCoreBind= 7-17 
+2020/07/24 12:26:10 repository: update function sleep2 funcQpsPerInstance= 4.000000 
+2020/07/24 12:26:10 repository: update function sleep2 request resource = &{Memory:40Mi CPU: GPU_Memory:0.2 GPU:0} 
+2020/07/24 12:26:10 repository: update function sleep2 constraints= [kubernetes.io/hostname=node28sdc] 
+2020/07/24 12:26:10 repository: update function sleep2 expectedReplicas= 1 
+2020/07/24 12:26:10 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:26:10 deploy: GPU resource envVars =  [{MODEL_NAME mnist nil} {fprocess python index.py nil} {CUDA_VISIBLE_DEVICES -1 nil} {GPU_MEM_FRACTION 0.2 nil}]
+2020/07/24 12:26:14 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:14 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-639114, container 1a2b89e7919d8a5914fe9331815c7df4c37c5fb91509baa8bcccda62d229c00e, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:26:14 repository: update function sleep2 availReplicas= 1 
+2020/07/24 12:26:14 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 9, totalMemoryUsed = -1.000000 
+2020/07/24 12:26:14 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-639114:0xc0006236a0] 
+2020/07/24 12:26:14 deploy: Deployment (pods with replicas = 1) created: funcName= sleep2, namespace= openfaas-fn 
+2020/07/24 12:26:14 repository: update function sleep2 in repository podSpec.Name= sleep2-pod-n0g-1-639114, podSec.Image= sleep:latest 
+2020/07/24 12:26:14 repository: update function sleep2 in repository srvSpec.name= sleep2, srvSec.Selector= map[faas_function:sleep2] 
+2020/07/24 12:26:14 deploy: service created: sleep2.openfaas-fn 
+2020/07/24 12:26:19 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:21 replicas: read replicas - sleep2 openfaas-fn, 1/1
+2020/07/24 12:26:24 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:27 replicas: read replicas - sleep2 openfaas-fn, 1/1
+2020/07/24 12:26:28 repository: update function sleep2 functionInactiveNum= 1 
+2020/07/24 12:26:29 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:32 replicas: read replicas - sleep2 openfaas-fn, 1/1
+2020/07/24 12:26:34 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:34 alert:  ------ requiredReplicas= 2 availReplicas= 1 -----
+2020/07/24 12:26:34 sleep2 alert: first scale out alert, requiredReplicas =  2
+2020/07/24 12:26:34 repository: update function sleep2 expectedReplicas= 2 
+2020/07/24 12:26:34 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:26:37 replicas: read replicas - sleep2 openfaas-fn, 1/2
+2020/07/24 12:26:39 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:42 replicas: read replicas - sleep2 openfaas-fn, 1/2
+2020/07/24 12:26:44 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:45 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-155293, container f943c91527b4015de46c5b8cb3f9cc0a91b57782f3c5e64fd0e13d946ce4f53e, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:26:45 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:26:45 repository: update function sleep2 availReplicas= 2 
+2020/07/24 12:26:45 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 10, totalMemoryUsed = -1.000000 
+2020/07/24 12:26:45 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-639114:0xc0006236a0] 
+2020/07/24 12:26:48 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:26:49 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:53 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:26:54 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:26:58 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:00 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:03 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:05 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:08 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:10 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:14 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:15 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:19 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:20 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:24 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:25 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:29 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:30 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:34 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:35 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:39 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:40 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:45 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:45 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:50 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:50 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:27:55 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:27:55 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:28:00 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:00 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:28:05 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:06 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:28:10 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:11 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:28:15 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:16 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:28:20 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:21 replicas: read replicas - sleep2 openfaas-fn, 2/2
+2020/07/24 12:28:22 alert:  ------ requiredReplicas= 3 availReplicas= 2 -----
+2020/07/24 12:28:22 sleep2 alert: scale out alert again, requiredReplicas =  3
+2020/07/24 12:28:22 repository: update function sleep2 expectedReplicas= 3 
+2020/07/24 12:28:22 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:28:25 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:26 replicas: read replicas - sleep2 openfaas-fn, 2/3
+2020/07/24 12:28:30 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:32 replicas: read replicas - sleep2 openfaas-fn, 2/3
+2020/07/24 12:28:35 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:36 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-383561, container ad320adb6cce2721368f8c95dccf885b1ff8cf81d4e818ae0e2ece9bf2fed24c, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:28:36 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:28:36 repository: update function sleep2 availReplicas= 3 
+2020/07/24 12:28:36 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 11, totalMemoryUsed = -1.000000 
+2020/07/24 12:28:36 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-383561:0xc00069d9a0 sleep2-pod-n0g-1-639114:0xc0006236a0] 
+2020/07/24 12:28:36 alert:  ------ requiredReplicas= 5 availReplicas= 3 -----
+2020/07/24 12:28:36 sleep2 alert: scale out has alerted, please wait
+2020/07/24 12:28:37 replicas: read replicas - sleep2 openfaas-fn, 3/3
+2020/07/24 12:28:37 alert:  ------ requiredReplicas= 5 availReplicas= 3 -----
+2020/07/24 12:28:37 sleep2 alert: scale out alert again, requiredReplicas =  5
+2020/07/24 12:28:37 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:28:37 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:28:41 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:42 replicas: read replicas - sleep2 openfaas-fn, 3/5
+2020/07/24 12:28:46 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:47 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-004668, container d527a68678ecf232f1526ebf9f1ca3b39f9e1b69d40fac80e9e02aca068d8ecf, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:28:47 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:28:47 repository: update function sleep2 availReplicas= 4 
+2020/07/24 12:28:47 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 12, totalMemoryUsed = -1.000000 
+2020/07/24 12:28:47 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-383561:0xc00069d9a0 sleep2-pod-n0g-1-639114:0xc0006236a0] 
+2020/07/24 12:28:47 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:28:48 replicas: read replicas - sleep2 openfaas-fn, 4/5
+2020/07/24 12:28:51 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:53 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-801747, container 63b7d44931c425b3d16c7852cc26738cf8200ba832e312601d68bb8f06080dc9, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:28:53 replicas: scaleup function sleep2 's Pod for differ 2 successfully 
+2020/07/24 12:28:53 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:28:53 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:28:53 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-383561:0xc00069d9a0 sleep2-pod-n0g-1-639114:0xc0006236a0 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:28:53 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:28:55 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:28:55 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:28:55 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:28:55 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:28:56 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:28:58 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:01 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:03 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:08 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:09 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-277102, container 7e4aec583914d8847dfacbf692410660416d383f4e6baf9fd39edc61a04f4836, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:29:09 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:29:09 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:29:09 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:29:09 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-277102:0xc0001c48e0 sleep2-pod-n0g-1-383561:0xc00069d9a0 sleep2-pod-n0g-1-639114:0xc0006236a0 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:29:09 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:29:09 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:29:09 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:29:09 scheduler: decide to delete podName = sleep2-pod-n0g-1-383561, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:29:09 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-383561 successfully 
+2020/07/24 12:29:09 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:29:09 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:29:09 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-277102:0xc0001c48e0 sleep2-pod-n0g-1-639114:0xc0006236a0 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:29:10 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:29:10 sleep2 alert: scale out has alerted, please wait
+2020/07/24 12:29:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:13 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:29:13 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:29:13 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:29:13 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:29:13 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:17 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:18 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:22 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:24 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:25 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-143224, container 0251b6403f59b51740fb3cc3cbb642cb91572f4407f4834777bb0bb35b10ad54, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:29:25 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:29:25 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:29:25 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:29:25 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-277102:0xc0001c48e0 sleep2-pod-n0g-1-639114:0xc0006236a0 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:29:25 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:29:25 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:29:25 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:29:25 scheduler: decide to delete podName = sleep2-pod-n0g-1-277102, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:29:25 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-277102 successfully 
+2020/07/24 12:29:25 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:29:25 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:29:25 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-639114:0xc0006236a0 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:29:27 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:29 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:29:31 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:29:31 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:29:31 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:29:31 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:29:32 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:34 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:37 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:40 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:40 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-432947, container a1f4e668b4fc0366f324883208aae2cebf7f8f677e697451e5c14815f33b4141, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:29:40 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:29:40 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:29:40 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:29:40 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-432947:0xc00035b500 sleep2-pod-n0g-1-639114:0xc0006236a0 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:29:40 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:29:40 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:29:40 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:29:40 scheduler: decide to delete podName = sleep2-pod-n0g-1-639114, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:29:40 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-639114 successfully 
+2020/07/24 12:29:40 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:29:40 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:29:40 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-432947:0xc00035b500 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:29:42 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:43 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:29:43 sleep2 alert: scale out has alerted, please wait
+2020/07/24 12:29:45 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:29:47 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:49 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:29:49 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:29:49 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:29:49 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:29:50 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:52 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:55 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:29:57 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:29:59 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-966079, container 6aafaecfb3de3aa4678fd55cb2844d2c748308ae51c8f45846aef6f0c33dd169, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:29:59 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:29:59 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:29:59 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:29:59 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-432947:0xc00035b500 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:29:59 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:29:59 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:29:59 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:29:59 scheduler: decide to delete podName = sleep2-pod-n0g-1-432947, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:30:00 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-432947 successfully 
+2020/07/24 12:30:00 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:30:00 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:30:00 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:30:00 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:30:02 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:05 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:30:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:10 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:30:10 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:30:10 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:30:10 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:30:10 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:30:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:15 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:30:17 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:20 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-173036, container 6ca12568b2ad1d473978a848771bc6826570784f6246c279d7e9c289dbb0a3e5, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:30:20 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:30:20 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:30:20 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:30:20 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-173036:0xc000623c00 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:30:20 replicas: read replicas - sleep2 openfaas-fn, 6/6
+2020/07/24 12:30:22 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:22 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:30:22 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:30:22 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:30:22 scheduler: decide to delete podName = sleep2-pod-n0g-1-173036, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:30:22 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-173036 successfully 
+2020/07/24 12:30:22 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:30:22 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:30:22 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:30:25 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:30:27 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:30 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:30:32 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:34 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:30:34 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:30:34 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:30:34 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:30:35 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:30:37 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:40 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:30:42 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:45 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-611263, container 4d50782ac0a6a967047a849f5dc13e34a34ed5c9579bd4de6ad6d4a39af38713, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:30:45 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:30:45 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:30:45 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:30:45 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-143224:0xc000359860 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:30:46 replicas: read replicas - sleep2 openfaas-fn, 6/6
+2020/07/24 12:30:47 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:51 replicas: read replicas - sleep2 openfaas-fn, 6/6
+2020/07/24 12:30:52 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:30:52 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:30:52 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:30:52 scheduler: decide to delete podName = sleep2-pod-n0g-1-143224, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:30:52 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-143224 successfully 
+2020/07/24 12:30:52 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:30:52 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:30:52 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:30:52 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:30:55 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:30:55 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:30:55 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:30:55 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:30:56 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:30:57 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:01 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:31:02 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-257239, container f40dcf2959d1e849f007170fb7079ef5cd33a3ba1e6c7fc7aabf6e8033292bc4, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:31:02 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:31:02 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:31:02 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:31:02 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-155293:0xc000287600 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:31:02 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:31:02 sleep2 alert: scale in has alerted, please wait...
+2020/07/24 12:31:02 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:06 replicas: read replicas - sleep2 openfaas-fn, 6/6
+2020/07/24 12:31:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:10 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:31:10 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:31:10 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:31:10 scheduler: decide to delete podName = sleep2-pod-n0g-1-155293, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:31:10 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-155293 successfully 
+2020/07/24 12:31:10 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:31:10 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:31:10 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:31:11 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:31:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:16 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:31:18 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:21 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:31:23 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:25 alert:  ------ requiredReplicas= 6 availReplicas= 5 -----
+2020/07/24 12:31:25 sleep2 alert: scale out alert again, requiredReplicas =  6
+2020/07/24 12:31:25 repository: update function sleep2 expectedReplicas= 6 
+2020/07/24 12:31:25 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:31:26 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:31:28 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:31 replicas: read replicas - sleep2 openfaas-fn, 5/6
+2020/07/24 12:31:33 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:33 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-509191, container bbe5e2104c03ff60684e646408763fa267fc6f9e9d8e53ac2bc3926ca592ffe8, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:31:33 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:31:33 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:31:33 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:31:33 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-966079:0xc0006222a0] 
+2020/07/24 12:31:36 replicas: read replicas - sleep2 openfaas-fn, 6/6
+2020/07/24 12:31:37 alert:  ------ requiredReplicas= 5 availReplicas= 6 -----
+2020/07/24 12:31:37 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:31:37 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:31:37 scheduler: decide to delete podName = sleep2-pod-n0g-1-966079, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:31:37 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-966079 successfully 
+2020/07/24 12:31:37 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:31:37 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:31:37 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:31:38 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:40 alert:  ------ requiredReplicas= 10 availReplicas= 5 -----
+2020/07/24 12:31:40 sleep2 alert: scale out has alerted, please wait
+2020/07/24 12:31:41 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:31:43 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:43 alert:  ------ requiredReplicas= 10 availReplicas= 5 -----
+2020/07/24 12:31:43 sleep2 alert: scale out alert again, requiredReplicas =  10
+2020/07/24 12:31:43 repository: update function sleep2 expectedReplicas= 10 
+2020/07/24 12:31:43 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:31:46 replicas: read replicas - sleep2 openfaas-fn, 5/10
+2020/07/24 12:31:48 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:52 replicas: read replicas - sleep2 openfaas-fn, 5/10
+2020/07/24 12:31:52 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-636587, container 7fdc96baf32831c7b59b6e53430f46c5223c155f21c9ecdf98c3a551591d7a42, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:31:52 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:31:52 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:31:52 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:31:52 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360] 
+2020/07/24 12:31:52 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:31:53 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:31:57 replicas: read replicas - sleep2 openfaas-fn, 6/10
+2020/07/24 12:31:58 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:01 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-934515, container 5aa46124a3ba5b101963b66476855fead16d013b65d242f909d2c3c94f50760a, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:32:01 replicas: scaleup function sleep2 's Pod for differ 2 successfully 
+2020/07/24 12:32:01 repository: update function sleep2 availReplicas= 7 
+2020/07/24 12:32:01 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 15, totalMemoryUsed = -1.000000 
+2020/07/24 12:32:01 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:32:01 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:32:02 replicas: read replicas - sleep2 openfaas-fn, 7/10
+2020/07/24 12:32:04 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:07 replicas: read replicas - sleep2 openfaas-fn, 7/10
+2020/07/24 12:32:10 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:13 replicas: read replicas - sleep2 openfaas-fn, 7/10
+2020/07/24 12:32:13 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-061012, container f9dd76659caf44409795e9eddf96af8d2f89a3f5d405eaa50eb55a51c3e10e9d, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:32:13 replicas: scaleup function sleep2 's Pod for differ 3 successfully 
+2020/07/24 12:32:13 repository: update function sleep2 availReplicas= 8 
+2020/07/24 12:32:13 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 16, totalMemoryUsed = -1.000000 
+2020/07/24 12:32:13 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-061012:0xc000287440 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:32:13 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:32:15 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:18 replicas: read replicas - sleep2 openfaas-fn, 8/10
+2020/07/24 12:32:20 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:23 replicas: read replicas - sleep2 openfaas-fn, 8/10
+2020/07/24 12:32:24 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-025894, container 83431eb86e3ee003aefa36fd6afe19e209dfea1b74ee954ebc84e5dcaf471d48, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:32:24 replicas: scaleup function sleep2 's Pod for differ 4 successfully 
+2020/07/24 12:32:24 repository: update function sleep2 availReplicas= 9 
+2020/07/24 12:32:24 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 17, totalMemoryUsed = -1.000000 
+2020/07/24 12:32:24 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-025894:0xc000359e80 sleep2-pod-n0g-1-061012:0xc000287440 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:32:24 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:32:26 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:28 replicas: read replicas - sleep2 openfaas-fn, 9/10
+2020/07/24 12:32:31 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:34 replicas: read replicas - sleep2 openfaas-fn, 9/10
+2020/07/24 12:32:36 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:38 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-884196, container 2e14e95eab1347b458b4344517982dc9b3fed15017c8e32f45420a1f7d40685a, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:32:38 replicas: scaleup function sleep2 's Pod for differ 5 successfully 
+2020/07/24 12:32:38 repository: update function sleep2 availReplicas= 10 
+2020/07/24 12:32:38 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 18, totalMemoryUsed = -1.000000 
+2020/07/24 12:32:38 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-025894:0xc000359e80 sleep2-pod-n0g-1-061012:0xc000287440 sleep2-pod-n0g-1-257239:0xc0001c5a20 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-884196:0xc000299fa0 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:32:39 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:32:41 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:44 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:32:46 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:49 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:32:51 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:54 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:32:56 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:32:59 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:01 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:04 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:09 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:14 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:17 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:19 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:22 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:24 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:27 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:29 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:32 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:34 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:37 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:39 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:42 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:44 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:47 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:49 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:52 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:54 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:33:57 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:33:59 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:02 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:04 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:09 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:14 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:17 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:19 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:22 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:24 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:27 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:30 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:32 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:35 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:37 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:40 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:42 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:45 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:47 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:50 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:52 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:34:55 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:34:57 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:00 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:02 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:05 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:10 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:12 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:15 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:17 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:20 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:22 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:25 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:27 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:30 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:32 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:35 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:37 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:40 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:42 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:45 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:47 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:50 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:52 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:35:55 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:35:57 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:00 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:36:02 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:05 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:36:07 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:10 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:36:13 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:15 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:36:18 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:20 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:36:23 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:25 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:36:28 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:30 replicas: read replicas - sleep2 openfaas-fn, 10/10
+2020/07/24 12:36:31 alert:  ------ requiredReplicas= 5 availReplicas= 10 -----
+2020/07/24 12:36:31 sleep2 alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:36:31 repository: update function sleep2 expectedReplicas= 5 
+2020/07/24 12:36:31 scheduler: decide to delete podName = sleep2-pod-n0g-1-257239, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:31 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-257239 successfully 
+2020/07/24 12:36:31 repository: update function sleep2 availReplicas= 9 
+2020/07/24 12:36:31 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 17, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:31 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-025894:0xc000359e80 sleep2-pod-n0g-1-061012:0xc000287440 sleep2-pod-n0g-1-509191:0xc00056a160 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-884196:0xc000299fa0 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:31 scheduler: decide to delete podName = sleep2-pod-n0g-1-509191, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:31 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-509191 successfully 
+2020/07/24 12:36:31 repository: update function sleep2 availReplicas= 8 
+2020/07/24 12:36:31 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 16, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:31 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-025894:0xc000359e80 sleep2-pod-n0g-1-061012:0xc000287440 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-884196:0xc000299fa0 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:31 scheduler: decide to delete podName = sleep2-pod-n0g-1-061012, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:31 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-061012 successfully 
+2020/07/24 12:36:31 repository: update function sleep2 availReplicas= 7 
+2020/07/24 12:36:31 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 15, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:31 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-025894:0xc000359e80 sleep2-pod-n0g-1-611263:0xc00000c520 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-884196:0xc000299fa0 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:31 scheduler: decide to delete podName = sleep2-pod-n0g-1-611263, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:31 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-611263 successfully 
+2020/07/24 12:36:31 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:36:31 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:31 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-025894:0xc000359e80 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-884196:0xc000299fa0 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:31 scheduler: decide to delete podName = sleep2-pod-n0g-1-025894, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:31 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-025894 successfully 
+2020/07/24 12:36:31 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:36:31 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:31 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-884196:0xc000299fa0 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:33 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:35 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:36:38 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:40 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:36:40 alert:  ------ requiredReplicas= 1 availReplicas= 5 -----
+2020/07/24 12:36:40 sleep2 alert: scale in has alerted, please wait...
+2020/07/24 12:36:43 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:43 alert:  ------ requiredReplicas= 1 availReplicas= 5 -----
+2020/07/24 12:36:43 sleep2 alert: scale in has alerted, please wait...
+2020/07/24 12:36:45 replicas: read replicas - sleep2 openfaas-fn, 5/5
+2020/07/24 12:36:46 alert:  ------ requiredReplicas= 3 availReplicas= 5 -----
+2020/07/24 12:36:46 sleep2 alert: scale in alert again, requiredReplicas =  3
+2020/07/24 12:36:46 repository: update function sleep2 expectedReplicas= 3 
+2020/07/24 12:36:46 scheduler: decide to delete podName = sleep2-pod-n0g-1-884196, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:46 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-884196 successfully 
+2020/07/24 12:36:46 repository: update function sleep2 availReplicas= 4 
+2020/07/24 12:36:46 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 12, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:46 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-636587:0xc00056a740 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:46 scheduler: decide to delete podName = sleep2-pod-n0g-1-636587, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:46 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-636587 successfully 
+2020/07/24 12:36:46 repository: update function sleep2 availReplicas= 3 
+2020/07/24 12:36:46 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 11, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:46 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:48 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:49 alert:  ------ requiredReplicas= 10 availReplicas= 3 -----
+2020/07/24 12:36:49 sleep2 alert: scale out alert again, requiredReplicas =  10
+2020/07/24 12:36:49 repository: update function sleep2 expectedReplicas= 10 
+2020/07/24 12:36:49 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:36:50 replicas: read replicas - sleep2 openfaas-fn, 3/10
+2020/07/24 12:36:53 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:55 replicas: read replicas - sleep2 openfaas-fn, 3/10
+2020/07/24 12:36:58 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:36:59 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-496856, container dc1ea4b34cd2db103d9a76f08cefd365de8d32f47490f58c7955ecaca9c3027d, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:36:59 replicas: scaleup function sleep2 's Pod for differ 1 successfully 
+2020/07/24 12:36:59 repository: update function sleep2 availReplicas= 4 
+2020/07/24 12:36:59 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 12, totalMemoryUsed = -1.000000 
+2020/07/24 12:36:59 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:36:59 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:37:01 replicas: read replicas - sleep2 openfaas-fn, 4/10
+2020/07/24 12:37:03 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:37:06 replicas: read replicas - sleep2 openfaas-fn, 4/10
+2020/07/24 12:37:08 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:37:11 replicas: read replicas - sleep2 openfaas-fn, 4/10
+2020/07/24 12:37:14 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:37:14 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-516854, container 6a7615641d6db22b381d0245a224227c6e62fa2637376ce1c3b1d2d955510b5b, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:37:14 replicas: scaleup function sleep2 's Pod for differ 2 successfully 
+2020/07/24 12:37:14 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:37:14 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:37:14 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:37:14 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:37:16 replicas: read replicas - sleep2 openfaas-fn, 5/10
+2020/07/24 12:37:19 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:37:22 replicas: read replicas - sleep2 openfaas-fn, 5/10
+2020/07/24 12:37:25 replicas: read replicas - sleep openfaas-fn, 10/10
+2020/07/24 12:37:27 replicas: read replicas - sleep2 openfaas-fn, 5/10
+2020/07/24 12:37:28 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-602061, container f6096b83085ce4821b74edd67afe8bc0ef760952f9da7b5f89b1c61fbdbe609b, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:37:28 replicas: scaleup function sleep2 's Pod for differ 3 successfully 
+2020/07/24 12:37:28 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:37:28 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:37:28 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:37:28 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:37:36 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-324649, container 5b85b4ac6d21378dbdb40c6f857ea9106db479d738f79844c9e2d926a63be0e8, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:37:36 replicas: scaleup function sleep2 's Pod for differ 4 successfully 
+2020/07/24 12:37:36 repository: update function sleep2 availReplicas= 7 
+2020/07/24 12:37:36 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 15, totalMemoryUsed = -1.000000 
+2020/07/24 12:37:36 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:37:36 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:37:47 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-569483, container dc5565b0a2b1a9019999395c8b1c5117c594446072d7b53dd226668dc1c04770, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:37:47 replicas: scaleup function sleep2 's Pod for differ 5 successfully 
+2020/07/24 12:37:47 repository: update function sleep2 availReplicas= 8 
+2020/07/24 12:37:47 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 16, totalMemoryUsed = -1.000000 
+2020/07/24 12:37:47 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:37:47 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:18 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-103248, container 3c25b57fc7b3a5addfd26f81074998262c877696aefa14fc24f610add1e89f61, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:38:18 replicas: scaleup function sleep2 's Pod for differ 6 successfully 
+2020/07/24 12:38:18 repository: update function sleep2 availReplicas= 9 
+2020/07/24 12:38:18 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 17, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:18 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-103248:0xc000319ac0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:18 scheduler: decide to deploy self-defined nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:32 cpuRepository: cpu bind success, for pod sleep2-pod-n0g-1-188032, container 0487361058caf8a8ed6d00e44f358a9c1cd95b21bfd1c3e366b287c2890a373a, in node 0 with IP 10.43.186.241, core 7-17
+2020/07/24 12:38:32 replicas: scaleup function sleep2 's Pod for differ 7 successfully 
+2020/07/24 12:38:32 repository: update function sleep2 availReplicas= 10 
+2020/07/24 12:38:32 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, cpuCore 7-17 totalFuncInstances = 18, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:32 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-004668:0xc000359fa0 sleep2-pod-n0g-1-103248:0xc000319ac0 sleep2-pod-n0g-1-188032:0xc0002cc7a0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:32 alert:  ------ requiredReplicas= 5 availReplicas= 10 -----
+2020/07/24 12:38:32 sleep alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:38:32 repository: update function sleep expectedReplicas= 5 
+2020/07/24 12:38:32 scheduler: decide to delete podName = sleep-pod-n1g-1-825832, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:38:32 replicas: function sleep deleted pod sleep-pod-n1g-1-825832 successfully 
+2020/07/24 12:38:32 repository: update function sleep availReplicas= 9 
+2020/07/24 12:38:32 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 1, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:32 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-457103:0xc0005a2740 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80 sleep-pod-n1g-1-308786:0xc00062c780] 
+2020/07/24 12:38:32 scheduler: decide to delete podName = sleep-pod-n1g-1-308786, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:38:32 replicas: function sleep deleted pod sleep-pod-n1g-1-308786 successfully 
+2020/07/24 12:38:32 repository: update function sleep availReplicas= 8 
+2020/07/24 12:38:32 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 0, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:32 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-457103:0xc0005a2740 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-686817:0xc0002cc620 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80] 
+2020/07/24 12:38:32 scheduler: decide to delete podName = sleep-pod-n0g-1-686817, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:32 replicas: function sleep deleted pod sleep-pod-n0g-1-686817 successfully 
+2020/07/24 12:38:32 repository: update function sleep availReplicas= 7 
+2020/07/24 12:38:32 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 17, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:32 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-457103:0xc0005a2740 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-911574:0xc0002cd3a0 sleep-pod-n0g-1-982829:0xc000286b80] 
+2020/07/24 12:38:32 scheduler: decide to delete podName = sleep-pod-n0g-1-911574, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:32 replicas: function sleep deleted pod sleep-pod-n0g-1-911574 successfully 
+2020/07/24 12:38:32 repository: update function sleep availReplicas= 6 
+2020/07/24 12:38:32 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 16, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:32 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-300490:0xc000622660 sleep-pod-n0g-1-457103:0xc0005a2740 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-982829:0xc000286b80] 
+2020/07/24 12:38:32 scheduler: decide to delete podName = sleep-pod-n0g-1-300490, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:32 replicas: function sleep deleted pod sleep-pod-n0g-1-300490 successfully 
+2020/07/24 12:38:32 repository: update function sleep availReplicas= 5 
+2020/07/24 12:38:32 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 15, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:32 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-457103:0xc0005a2740 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-832826:0xc00056b640 sleep-pod-n0g-1-982829:0xc000286b80] 
+2020/07/24 12:38:34 alert:  ------ requiredReplicas= 7 availReplicas= 10 -----
+2020/07/24 12:38:34 sleep2 alert: scale in alert again, requiredReplicas =  7
+2020/07/24 12:38:34 repository: update function sleep2 expectedReplicas= 7 
+2020/07/24 12:38:34 scheduler: decide to delete podName = sleep2-pod-n0g-1-004668, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:34 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-004668 successfully 
+2020/07/24 12:38:34 repository: update function sleep2 availReplicas= 9 
+2020/07/24 12:38:34 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 14, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:34 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-103248:0xc000319ac0 sleep2-pod-n0g-1-188032:0xc0002cc7a0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-801747:0xc000622360 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:34 scheduler: decide to delete podName = sleep2-pod-n0g-1-801747, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:34 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-801747 successfully 
+2020/07/24 12:38:34 repository: update function sleep2 availReplicas= 8 
+2020/07/24 12:38:34 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 13, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:34 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-103248:0xc000319ac0 sleep2-pod-n0g-1-188032:0xc0002cc7a0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:34 scheduler: decide to delete podName = sleep2-pod-n0g-1-188032, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:34 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-188032 successfully 
+2020/07/24 12:38:34 repository: update function sleep2 availReplicas= 7 
+2020/07/24 12:38:34 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 12, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:34 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-103248:0xc000319ac0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-516854:0xc000299400 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:37 repository: update function sleep functionInactiveNum= 6 
+2020/07/24 12:38:37 repository: update function sleep2 functionInactiveNum= 2 
+2020/07/24 12:38:37 alert:  ------ requiredReplicas= 1 availReplicas= 7 -----
+2020/07/24 12:38:37 sleep2 alert: scale in has alerted, please wait...
+2020/07/24 12:38:40 repository: update function sleep functionInactiveNum= 7 
+2020/07/24 12:38:40 repository: update function sleep2 functionInactiveNum= 3 
+2020/07/24 12:38:40 alert:  ------ requiredReplicas= 1 availReplicas= 7 -----
+2020/07/24 12:38:40 sleep2 alert: scale in has alerted, please wait...
+2020/07/24 12:38:43 repository: update function sleep functionInactiveNum= 8 
+2020/07/24 12:38:43 repository: update function sleep2 functionInactiveNum= 4 
+2020/07/24 12:38:43 alert:  ------ requiredReplicas= 1 availReplicas= 7 -----
+2020/07/24 12:38:43 sleep2 alert: scale in has alerted, please wait...
+2020/07/24 12:38:46 repository: update function sleep functionInactiveNum= 9 
+2020/07/24 12:38:46 repository: update function sleep2 functionInactiveNum= 5 
+2020/07/24 12:38:46 alert:  ------ requiredReplicas= 1 availReplicas= 7 -----
+2020/07/24 12:38:46 sleep2 alert: scale in has alerted, please wait...
+2020/07/24 12:38:49 repository: update function sleep functionInactiveNum= 10 
+2020/07/24 12:38:49 repository: update function sleep2 functionInactiveNum= 6 
+2020/07/24 12:38:49 alert:  ------ requiredReplicas= 1 availReplicas= 7 -----
+2020/07/24 12:38:49 sleep2 alert: scale in alert again, requiredReplicas =  1
+2020/07/24 12:38:49 repository: update function sleep2 expectedReplicas= 1 
+2020/07/24 12:38:49 scheduler: decide to delete podName = sleep2-pod-n0g-1-516854, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:49 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-516854 successfully 
+2020/07/24 12:38:49 repository: update function sleep2 availReplicas= 6 
+2020/07/24 12:38:49 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 11, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:49 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-103248:0xc000319ac0 sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:49 scheduler: decide to delete podName = sleep2-pod-n0g-1-103248, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:49 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-103248 successfully 
+2020/07/24 12:38:49 repository: update function sleep2 availReplicas= 5 
+2020/07/24 12:38:49 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 10, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:49 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-569483:0xc000319580 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:49 scheduler: decide to delete podName = sleep2-pod-n0g-1-569483, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:49 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-569483 successfully 
+2020/07/24 12:38:49 repository: update function sleep2 availReplicas= 4 
+2020/07/24 12:38:49 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 9, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:49 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-496856:0xc000319e40 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:49 scheduler: decide to delete podName = sleep2-pod-n0g-1-496856, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:49 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-496856 successfully 
+2020/07/24 12:38:49 repository: update function sleep2 availReplicas= 3 
+2020/07/24 12:38:49 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 8, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:49 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-602061:0xc000299c80 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:49 scheduler: decide to delete podName = sleep2-pod-n0g-1-602061, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:49 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-602061 successfully 
+2020/07/24 12:38:49 repository: update function sleep2 availReplicas= 2 
+2020/07/24 12:38:49 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 7, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:49 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-324649:0xc000622ae0 sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:49 scheduler: decide to delete podName = sleep2-pod-n0g-1-324649, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:38:49 replicas: function sleep2 deleted pod sleep2-pod-n0g-1-324649 successfully 
+2020/07/24 12:38:49 repository: update function sleep2 availReplicas= 1 
+2020/07/24 12:38:49 repository: update function sleep2 and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 6, totalMemoryUsed = -1.000000 
+2020/07/24 12:38:49 repository: update function sleep2 in repository funcPodLocationMap= map[sleep2-pod-n0g-1-934515:0xc00042b6a0] 
+2020/07/24 12:38:52 repository: update function sleep functionInactiveNum= 11 
+2020/07/24 12:38:52 repository: update function sleep2 functionInactiveNum= 7 
+2020/07/24 12:38:55 repository: update function sleep functionInactiveNum= 12 
+2020/07/24 12:38:55 repository: update function sleep2 functionInactiveNum= 8 
+2020/07/24 12:38:58 repository: update function sleep functionInactiveNum= 13 
+2020/07/24 12:38:58 repository: update function sleep2 functionInactiveNum= 9 
+2020/07/24 12:39:01 repository: update function sleep functionInactiveNum= 14 
+2020/07/24 12:39:01 repository: update function sleep2 functionInactiveNum= 10 
+2020/07/24 12:39:04 repository: update function sleep functionInactiveNum= 15 
+2020/07/24 12:39:04 repository: update function sleep2 functionInactiveNum= 11 
+2020/07/24 12:39:07 repository: update function sleep functionInactiveNum= 16 
+2020/07/24 12:39:07 repository: update function sleep2 functionInactiveNum= 12 
+2020/07/24 12:39:10 repository: update function sleep functionInactiveNum= 17 
+2020/07/24 12:39:10 repository: update function sleep2 functionInactiveNum= 13 
+2020/07/24 12:39:13 repository: update function sleep functionInactiveNum= 18 
+2020/07/24 12:39:13 repository: update function sleep2 functionInactiveNum= 14 
+2020/07/24 12:39:16 repository: update function sleep functionInactiveNum= 19 
+2020/07/24 12:39:16 repository: update function sleep2 functionInactiveNum= 15 
+2020/07/24 12:39:19 repository: update function sleep functionInactiveNum= 20 
+2020/07/24 12:39:19 repository: update function sleep2 functionInactiveNum= 16 
+2020/07/24 12:39:22 repository: update function sleep functionInactiveNum= 21 
+2020/07/24 12:39:22 repository: update function sleep2 functionInactiveNum= 17 
+2020/07/24 12:39:25 repository: update function sleep functionInactiveNum= 0 
+2020/07/24 12:39:25 alert:  ------ requiredReplicas= 0 availReplicas= 5 -----
+2020/07/24 12:39:25 sleep alert: scale in alert again, requiredReplicas =  0
+2020/07/24 12:39:25 repository: update function sleep expectedReplicas= 0 
+2020/07/24 12:39:25 scheduler: decide to delete podName = sleep-pod-n0g-1-982829, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:39:25 replicas: function sleep deleted pod sleep-pod-n0g-1-982829 successfully 
+2020/07/24 12:39:25 repository: update function sleep availReplicas= 4 
+2020/07/24 12:39:25 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 5, totalMemoryUsed = -1.000000 
+2020/07/24 12:39:25 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-457103:0xc0005a2740 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-832826:0xc00056b640] 
+2020/07/24 12:39:25 scheduler: decide to delete podName = sleep-pod-n0g-1-457103, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:39:25 replicas: function sleep deleted pod sleep-pod-n0g-1-457103 successfully 
+2020/07/24 12:39:25 repository: update function sleep availReplicas= 3 
+2020/07/24 12:39:25 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 4, totalMemoryUsed = -1.000000 
+2020/07/24 12:39:25 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-017971:0xc00035a540 sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-832826:0xc00056b640] 
+2020/07/24 12:39:25 scheduler: decide to delete podName = sleep-pod-n0g-1-017971, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:39:25 replicas: function sleep deleted pod sleep-pod-n0g-1-017971 successfully 
+2020/07/24 12:39:25 repository: update function sleep availReplicas= 2 
+2020/07/24 12:39:25 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 3, totalMemoryUsed = -1.000000 
+2020/07/24 12:39:25 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-505584:0xc00030d7a0 sleep-pod-n0g-1-832826:0xc00056b640] 
+2020/07/24 12:39:25 scheduler: decide to delete podName = sleep-pod-n0g-1-832826, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:39:25 replicas: function sleep deleted pod sleep-pod-n0g-1-832826 successfully 
+2020/07/24 12:39:25 repository: update function sleep availReplicas= 1 
+2020/07/24 12:39:25 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:39:25 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-505584:0xc00030d7a0] 
+2020/07/24 12:39:25 scheduler: decide to delete podName = sleep-pod-n0g-1-505584, nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:39:25 replicas: function sleep deleted pod sleep-pod-n0g-1-505584 successfully 
+2020/07/24 12:39:25 repository: update function sleep availReplicas= 0 
+2020/07/24 12:39:25 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, totalFuncInstances = 1, totalMemoryUsed = -1.000000 
+2020/07/24 12:39:25 repository: update function sleep in repository funcPodLocationMap= map[] 
+2020/07/24 12:39:25 repository: update function sleep2 functionInactiveNum= 18 
+2020/07/24 12:39:28 repository: update function sleep2 functionInactiveNum= 19 
+2020/07/24 12:39:31 repository: update function sleep2 functionInactiveNum= 20 
+2020/07/24 12:39:34 repository: update function sleep2 functionInactiveNum= 21 
+2020/07/24 12:39:37 repository: update function sleep2 functionInactiveNum= 22 
+2020/07/24 12:39:40 repository: update function sleep2 functionInactiveNum= 23 
+2020/07/24 12:39:43 repository: update function sleep2 functionInactiveNum= 24 
+2020/07/24 12:39:46 repository: update function sleep2 functionInactiveNum= 25 
+2020/07/24 12:39:49 repository: update function sleep2 functionInactiveNum= 26 
+2020/07/24 12:39:52 repository: update function sleep2 functionInactiveNum= 27 
+2020/07/24 12:39:55 repository: update function sleep2 functionInactiveNum= 28 
+2020/07/24 12:39:58 repository: update function sleep2 functionInactiveNum= 29 
+2020/07/24 12:39:59 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:39:59 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:01 repository: update function sleep2 functionInactiveNum= 30 
+2020/07/24 12:40:04 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:04 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:04 repository: update function sleep2 functionInactiveNum= 31 
+2020/07/24 12:40:07 repository: update function sleep2 functionInactiveNum= 32 
+2020/07/24 12:40:09 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:09 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:10 repository: update function sleep2 functionInactiveNum= 33 
+2020/07/24 12:40:13 repository: update function sleep2 functionInactiveNum= 34 
+2020/07/24 12:40:14 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:14 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:16 repository: update function sleep2 functionInactiveNum= 35 
+2020/07/24 12:40:19 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:19 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:19 repository: update function sleep2 functionInactiveNum= 36 
+2020/07/24 12:40:22 repository: update function sleep2 functionInactiveNum= 37 
+2020/07/24 12:40:24 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:24 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:25 repository: update function sleep2 functionInactiveNum= 38 
+2020/07/24 12:40:28 repository: update function sleep2 functionInactiveNum= 39 
+2020/07/24 12:40:29 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:29 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:31 repository: update function sleep2 functionInactiveNum= 40 
+2020/07/24 12:40:34 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:34 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:34 repository: update function sleep2 functionInactiveNum= 41 
+2020/07/24 12:40:37 repository: update function sleep2 functionInactiveNum= 42 
+2020/07/24 12:40:39 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:39 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:40 repository: update function sleep2 functionInactiveNum= 43 
+2020/07/24 12:40:43 repository: update function sleep2 functionInactiveNum= 44 
+2020/07/24 12:40:44 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:44 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:46 repository: update function sleep2 functionInactiveNum= 45 
+2020/07/24 12:40:49 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:49 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:49 repository: update function sleep2 functionInactiveNum= 46 
+2020/07/24 12:40:52 repository: update function sleep2 functionInactiveNum= 47 
+2020/07/24 12:40:54 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:54 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:40:55 repository: update function sleep2 functionInactiveNum= 48 
+2020/07/24 12:40:58 repository: update function sleep2 functionInactiveNum= 49 
+2020/07/24 12:40:59 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:40:59 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:01 repository: update function sleep2 functionInactiveNum= 50 
+2020/07/24 12:41:04 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:04 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:04 repository: update function sleep2 functionInactiveNum= 51 
+2020/07/24 12:41:07 repository: update function sleep2 functionInactiveNum= 52 
+2020/07/24 12:41:09 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:09 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:10 repository: update function sleep2 functionInactiveNum= 53 
+2020/07/24 12:41:13 repository: update function sleep2 functionInactiveNum= 54 
+2020/07/24 12:41:14 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:14 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:16 repository: update function sleep2 functionInactiveNum= 55 
+2020/07/24 12:41:19 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:19 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:19 repository: update function sleep2 functionInactiveNum= 56 
+2020/07/24 12:41:22 repository: update function sleep2 functionInactiveNum= 57 
+2020/07/24 12:41:24 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:24 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:25 repository: update function sleep2 functionInactiveNum= 58 
+2020/07/24 12:41:28 repository: update function sleep2 functionInactiveNum= 59 
+2020/07/24 12:41:29 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:29 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:31 repository: update function sleep2 functionInactiveNum= 60 
+2020/07/24 12:41:34 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:34 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:34 repository: update function sleep2 functionInactiveNum= 61 
+2020/07/24 12:41:37 repository: update function sleep2 functionInactiveNum= 62 
+2020/07/24 12:41:39 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:39 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:40 repository: update function sleep2 functionInactiveNum= 63 
+2020/07/24 12:41:43 repository: update function sleep2 functionInactiveNum= 64 
+2020/07/24 12:41:44 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:44 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:46 repository: update function sleep2 functionInactiveNum= 65 
+2020/07/24 12:41:49 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:49 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:49 repository: update function sleep2 functionInactiveNum= 66 
+2020/07/24 12:41:52 repository: update function sleep2 functionInactiveNum= 67 
+2020/07/24 12:41:54 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:54 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:41:55 repository: update function sleep2 functionInactiveNum= 68 
+2020/07/24 12:41:58 repository: update function sleep2 functionInactiveNum= 69 
+2020/07/24 12:41:59 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:41:59 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:01 repository: update function sleep2 functionInactiveNum= 70 
+2020/07/24 12:42:04 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:04 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:04 repository: update function sleep2 functionInactiveNum= 71 
+2020/07/24 12:42:07 repository: update function sleep2 functionInactiveNum= 72 
+2020/07/24 12:42:09 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:09 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:10 repository: update function sleep2 functionInactiveNum= 73 
+2020/07/24 12:42:13 repository: update function sleep2 functionInactiveNum= 74 
+2020/07/24 12:42:14 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:14 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:16 repository: update function sleep2 functionInactiveNum= 75 
+2020/07/24 12:42:19 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:19 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:19 repository: update function sleep2 functionInactiveNum= 76 
+2020/07/24 12:42:22 repository: update function sleep2 functionInactiveNum= 77 
+2020/07/24 12:42:24 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:24 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:25 repository: update function sleep2 functionInactiveNum= 78 
+2020/07/24 12:42:26 Query namespaces
+2020/07/24 12:42:26 Error listing namespaces: namespaces is forbidden: User "system:serviceaccount:openfaas:faas-controller" cannot list resource "namespaces" in API group "" at the cluster scope
+2020/07/24 12:42:26 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:26 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:28 repository: update function sleep2 functionInactiveNum= 79 
+2020/07/24 12:42:29 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:29 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:31 repository: update function sleep2 functionInactiveNum= 80 
+2020/07/24 12:42:34 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:34 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:34 repository: update function sleep2 functionInactiveNum= 81 
+2020/07/24 12:42:37 repository: update function sleep2 functionInactiveNum= 82 
+2020/07/24 12:42:39 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:39 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:40 repository: update function sleep2 functionInactiveNum= 83 
+2020/07/24 12:42:43 repository: update function sleep2 functionInactiveNum= 84 
+2020/07/24 12:42:44 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:44 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:46 repository: update function sleep2 functionInactiveNum= 85 
+2020/07/24 12:42:49 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:49 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:49 repository: update function sleep2 functionInactiveNum= 86 
+2020/07/24 12:42:52 repository: update function sleep2 functionInactiveNum= 87 
+2020/07/24 12:42:54 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:54 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:42:55 repository: update function sleep2 functionInactiveNum= 88 
+2020/07/24 12:42:58 repository: update function sleep2 functionInactiveNum= 89 
+2020/07/24 12:42:59 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:42:59 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:43:01 repository: update function sleep2 functionInactiveNum= 90 
+2020/07/24 12:43:04 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:43:04 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:43:04 repository: update function sleep2 functionInactiveNum= 91 
+2020/07/24 12:43:07 repository: update function sleep2 functionInactiveNum= 92 
+2020/07/24 12:43:09 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:43:09 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:43:10 repository: update function sleep2 functionInactiveNum= 93 
+2020/07/24 12:43:13 repository: update function sleep2 functionInactiveNum= 94 
+2020/07/24 12:43:14 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:43:14 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:43:16 repository: update function sleep2 functionInactiveNum= 95 
+2020/07/24 12:43:19 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:43:19 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:43:19 reader: service sleep exists, but pod has been scaled in to 0 
+2020/07/24 12:43:19 reader: create a func status for function sleep from repository, ExpectedReplicas= 0, AvailReplicas= 0 
+2020/07/24 12:43:19 replicas: read replicas - sleep openfaas-fn, 0/0
+2020/07/24 12:43:19 repository: update function sleep expectedReplicas= 5 
+2020/07/24 12:43:19 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:43:19 repository: update function sleep2 functionInactiveNum= 96 
+2020/07/24 12:43:22 repository: update function sleep2 functionInactiveNum= 97 
+2020/07/24 12:43:25 repository: update function sleep2 functionInactiveNum= 98 
+2020/07/24 12:43:28 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-693736, container 26d496dd4f68114b5e729670a90153b25a07f0fff87ccec40f19fc9741316ed0, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:43:28 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:43:28 repository: update function sleep availReplicas= 1 
+2020/07/24 12:43:28 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:43:28 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-693736:0xc0005781c0] 
+2020/07/24 12:43:28 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:43:28 alert:  ------ requiredReplicas= 5 availReplicas= 1 -----
+2020/07/24 12:43:28 sleep alert: scale out alert again, requiredReplicas =  5
+2020/07/24 12:43:28 repository: update function sleep expectedReplicas= 5 
+2020/07/24 12:43:28 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:43:41 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-476061, container f62a7f1a9adb8977d7ec2f9ee4be7fd7e7bab9ff40e44460363632afb55a17c8, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:43:41 replicas: scaleup function sleep 's Pod for differ 2 successfully 
+2020/07/24 12:43:41 repository: update function sleep availReplicas= 2 
+2020/07/24 12:43:41 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 1, totalMemoryUsed = -1.000000 
+2020/07/24 12:43:41 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-731040:0xc0003d83e0] 
+2020/07/24 12:43:41 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:43:43 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-731040, container 77fba017b4f1b202a643dd862a8ceff628712983b60255b973583b3f90d892bc, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:43:43 replicas: scaleup function sleep 's Pod for differ 1 successfully 
+2020/07/24 12:43:43 repository: update function sleep availReplicas= 3 
+2020/07/24 12:43:43 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:43:43 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0] 
+2020/07/24 12:43:43 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:43:52 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-714640, container cf7010182ad0e81f1d44dca082446f9a76abc3c6fa8f3eb53cf7ac3691db15a6, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:43:52 replicas: scaleup function sleep 's Pod for differ 3 successfully 
+2020/07/24 12:43:52 repository: update function sleep availReplicas= 4 
+2020/07/24 12:43:52 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 3, totalMemoryUsed = -1.000000 
+2020/07/24 12:43:52 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0 sleep-pod-n1g-1-969339:0xc00042bea0] 
+2020/07/24 12:43:52 scheduler: decide to deploy nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:43:55 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-969339, container 7c2546a6eff0440f1b98645c9af8de530423bfd8eeba602c899ec1b08dcd73ad, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:43:55 replicas: scaleup function sleep 's Pod for differ 2 successfully 
+2020/07/24 12:43:55 repository: update function sleep availReplicas= 5 
+2020/07/24 12:43:55 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 4, totalMemoryUsed = -1.000000 
+2020/07/24 12:43:55 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-349058:0xc000362600 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0 sleep-pod-n1g-1-969339:0xc00042bea0] 
+2020/07/24 12:43:55 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:44:00 cpuRepository: cpu bind success, for pod sleep-pod-n1g-1-349058, container bb85a8308005b5291a87f98b1da63e9aaad57bb16b40daf06ab9b16b3b6f1fcf, in node 1 with IP 10.43.11.145, core 0-5
+2020/07/24 12:44:00 replicas: scaleup function sleep 's Pod for differ 4 successfully 
+2020/07/24 12:44:00 repository: update function sleep availReplicas= 6 
+2020/07/24 12:44:00 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 5, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:00 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-349058:0xc000362600 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0 sleep-pod-n1g-1-969339:0xc00042bea0] 
+2020/07/24 12:44:00 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:44:08 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-347515, container db0e4b06473f70c68d20c2da5633f2b6b4b679a635268661f1b5c82e9504cac3, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:44:08 replicas: scaleup function sleep 's Pod for differ 3 successfully 
+2020/07/24 12:44:08 repository: update function sleep availReplicas= 7 
+2020/07/24 12:44:08 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 3, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:08 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-483552:0xc00042a120 sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-349058:0xc000362600 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0 sleep-pod-n1g-1-969339:0xc00042bea0] 
+2020/07/24 12:44:08 scheduler: decide to deploy nodeIndex = 0, cudaDeviceIndex = -1 
+2020/07/24 12:44:08 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-483552, container 872e41b9b32f21767f3fce66f8b128bd3f702fca60ba9cc3d2f3b1c664bbee65, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:44:08 replicas: scaleup function sleep 's Pod for differ 5 successfully 
+2020/07/24 12:44:08 repository: update function sleep availReplicas= 8 
+2020/07/24 12:44:08 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 4, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:08 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-265430:0xc0002cc5c0 sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-483552:0xc00042a120 sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-349058:0xc000362600 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0 sleep-pod-n1g-1-969339:0xc00042bea0] 
+2020/07/24 12:44:09 replicas: read replicas - sleep openfaas-fn, 8/5
+2020/07/24 12:44:15 replicas: read replicas - sleep openfaas-fn, 8/5
+2020/07/24 12:44:19 cpuRepository: cpu bind success, for pod sleep-pod-n0g-1-265430, container 0b73487e58e2c7afa6665022c0e9f1d609a18ede0066f08c709a9466bfca513a, in node 0 with IP 10.43.186.241, core 0-5
+2020/07/24 12:44:19 replicas: scaleup function sleep 's Pod for differ 4 successfully 
+2020/07/24 12:44:19 repository: update function sleep availReplicas= 9 
+2020/07/24 12:44:19 repository: update function sleep and cluster capacity in node 0, cudaDevice -1, cpuCore 0-5 totalFuncInstances = 5, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:19 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-265430:0xc000579ea0 sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-483552:0xc00042a120 sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-349058:0xc000362600 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0 sleep-pod-n1g-1-969339:0xc00042bea0] 
+2020/07/24 12:44:19 repository: update function sleep2 functionInactiveNum= 99 
+2020/07/24 12:44:19 alert:  ------ requiredReplicas= 5 availReplicas= 9 -----
+2020/07/24 12:44:19 sleep alert: scale in alert again, requiredReplicas =  5
+2020/07/24 12:44:19 repository: update function sleep expectedReplicas= 5 
+2020/07/24 12:44:19 scheduler: decide to delete podName = sleep-pod-n1g-1-969339, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:44:19 replicas: function sleep deleted pod sleep-pod-n1g-1-969339 successfully 
+2020/07/24 12:44:19 repository: update function sleep availReplicas= 8 
+2020/07/24 12:44:19 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 4, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:19 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-265430:0xc000579ea0 sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-483552:0xc00042a120 sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-349058:0xc000362600 sleep-pod-n1g-1-714640:0xc00042bc80 sleep-pod-n1g-1-731040:0xc0003d83e0] 
+2020/07/24 12:44:19 scheduler: decide to delete podName = sleep-pod-n1g-1-731040, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:44:20 replicas: function sleep deleted pod sleep-pod-n1g-1-731040 successfully 
+2020/07/24 12:44:20 repository: update function sleep availReplicas= 7 
+2020/07/24 12:44:20 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 3, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:20 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-265430:0xc000579ea0 sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-483552:0xc00042a120 sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-349058:0xc000362600 sleep-pod-n1g-1-714640:0xc00042bc80] 
+2020/07/24 12:44:20 scheduler: decide to delete podName = sleep-pod-n1g-1-349058, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:44:20 replicas: function sleep deleted pod sleep-pod-n1g-1-349058 successfully 
+2020/07/24 12:44:20 repository: update function sleep availReplicas= 6 
+2020/07/24 12:44:20 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 2, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:20 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-265430:0xc000579ea0 sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-483552:0xc00042a120 sleep-pod-n0g-1-693736:0xc0005781c0 sleep-pod-n1g-1-714640:0xc00042bc80] 
+2020/07/24 12:44:20 scheduler: decide to delete podName = sleep-pod-n1g-1-714640, nodeIndex = 1, cudaDeviceIndex = -1 
+2020/07/24 12:44:20 replicas: function sleep deleted pod sleep-pod-n1g-1-714640 successfully 
+2020/07/24 12:44:20 repository: update function sleep availReplicas= 5 
+2020/07/24 12:44:20 repository: update function sleep and cluster capacity in node 1, cudaDevice -1, totalFuncInstances = 1, totalMemoryUsed = -1.000000 
+2020/07/24 12:44:20 repository: update function sleep in repository funcPodLocationMap= map[sleep-pod-n0g-1-265430:0xc000579ea0 sleep-pod-n0g-1-347515:0xc000299fa0 sleep-pod-n0g-1-483552:0xc00042a120 sleep-pod-n0g-1-693736:0xc0005781c0] 
+2020/07/24 12:44:20 repository: update function sleep2 functionInactiveNum= 100 
+2020/07/24 12:44:20 repository: update function sleep2 functionInactiveNum= 101 
+2020/07/24 12:44:20 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:22 repository: update function sleep2 functionInactiveNum= 102 
+2020/07/24 12:44:25 repository: update function sleep2 functionInactiveNum= 103 
+2020/07/24 12:44:26 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:28 repository: update function sleep2 functionInactiveNum= 104 
+2020/07/24 12:44:31 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:31 repository: update function sleep2 functionInactiveNum= 105 
+2020/07/24 12:44:34 repository: update function sleep2 functionInactiveNum= 106 
+2020/07/24 12:44:37 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:37 repository: update function sleep2 functionInactiveNum= 107 
+2020/07/24 12:44:40 repository: update function sleep2 functionInactiveNum= 108 
+2020/07/24 12:44:42 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:43 repository: update function sleep2 functionInactiveNum= 109 
+2020/07/24 12:44:46 repository: update function sleep2 functionInactiveNum= 110 
+2020/07/24 12:44:47 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:49 repository: update function sleep2 functionInactiveNum= 111 
+2020/07/24 12:44:52 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:52 repository: update function sleep2 functionInactiveNum= 112 
+2020/07/24 12:44:55 repository: update function sleep2 functionInactiveNum= 113 
+2020/07/24 12:44:58 replicas: read replicas - sleep openfaas-fn, 5/5
+2020/07/24 12:44:58 repository: update function sleep2 functionInactiveNum= 114 
